@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <title>Bartosz Król - <%= section %></title>
+        <%- include ("../struct/meta.ejs") %>
+        <%- include ("../struct/fonts.ejs") %>
+        <link rel=stylesheet type=text/css href=/public/css/home.css>
+    </head>
+</html>
+<body>
+    <%- include ("../struct/top.ejs") %>
+    <%- include (`./${section.toLowerCase()}.ejs`) %>
+</body>
+
+

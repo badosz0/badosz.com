@@ -1,0 +1,191 @@
+:root {
+    --white: #FFF; 
+    --black: #333;
+}
+
+html {
+    overflow:   scroll;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--black);
+    font-family: 'Roboto Mono';
+    margin: 0;
+    padding: 0;
+}
+
+.top {
+    height: 250px;
+    width: 100%;
+    position: relative;
+}
+
+.top .name {
+    white-space: nowrap;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Source Serif Pro', serif;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.top .menu {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50px;
+    border-top: solid 1px #ddd;
+    border-bottom: solid 1px #ddd;
+}
+
+.top .menu .buttons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+}
+
+.top .menu .buttons .button {
+    text-decoration: none;
+    color: var(--black);
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.top .buttons .button.active {
+    text-decoration: underline;
+}
+
+.content {
+    position: relative;
+    /* display: none; */
+    animation: fade 1s;
+    width: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-bottom: -100px; 
+}
+
+.content:after {
+  content: "";
+  display: block;
+}
+
+#projects .project {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+#projects .project .name {
+    color: var(--black);
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#projects .project .description {
+    color: var(--black);
+    font-size: 18px;
+    display:block;
+    width: 70%;
+    font-family: 'Ubuntu', serif;
+    padding-right: 30px;
+    margin-top: 10px;
+    white-space: unset;
+}
+
+#projects .project .links {
+    position: absolute;
+    right: 0px;
+    top: 40px;
+    color: var(--black);
+    border-left: solid 2px #ddd;
+    width: 15%;
+    text-align: right;
+    font-size: 18px;
+}
+
+#projects .project .links .link {
+    cursor: pointer;
+    color: var(--black);
+}
+
+#projects .project .description .twitter {
+    color: #1DA1F2;
+}
+
+#projects .project .description .discord {
+    color: #7289DA;
+}
+
+#projects .project .description .image {
+    width: 100%; 
+    margin-top: 20px;
+}
+
+#projects .break  {
+    width: 50px;
+    left: 0;
+    border: solid 1px #ddd;
+    margin-bottom: 40px;
+}
+
+#contacts .contact {
+    font-size: 25px;
+    color: var(--black);
+    padding: 20px;
+    margin-left: 40%;
+}
+
+#contacts .contact i{
+    width: 30px;
+}
+
+#home .event {
+    position: relative;
+    margin-bottom: 7px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #ddd;
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+#home .event .date {
+    position: absolute;
+    right: 0;
+    color: #ddd;
+}
+
+#blog .post {
+    position: relative;
+    margin-bottom: 7px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #ddd;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+#blog .post .date {
+    position: absolute;
+    right: 0;
+    color: #ddd;
+}
+
+@keyframes fade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}

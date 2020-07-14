@@ -1,0 +1,37 @@
+<meta charset=UTF-8>
+<meta http-equiv=X-UA-Compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1, user-scalable=no"">
+<meta name=description content="Programmer.">
+<meta property=og:type content=product>
+<meta property=og:image content=/public/images/brand/bIcon-white.png>
+<meta property=og:title content="Programmer.">
+<meta name=twitter:card content=product>
+<meta name=twitter:site content=https://badosz.com>
+<meta name=twitter:title content="Programmer.">
+<meta name=theme-color content=#fff>
+
+<link rel="shortcut icon" href=/public/images/brand/bIcon-white.png>
+<link rel="icon" href=/public/images/brand/bIcon-white.png>
+<script src="https://kit.fontawesome.com/5d5b30e779.js" crossorigin="anonymous"></script>
+
+<script>
+    const dark_mode_media_query = window.matchMedia('(prefers-color-scheme: dark)')
+
+    function handle_dark_mode(e) {
+        const dark_mode_on = e.matches
+        const favicon = document.querySelector('link[rel="shortcut icon"]')
+        const large_favicon = document.querySelector('link[rel="icon"]')
+        if (!favicon || !large_favicon) return
+        if (dark_mode_on) {
+            favicon.href = '/public/images/brand/bIcon-black.png'
+            large_favicon.href = '/public/images/brand/bIcon-black.png'
+        }
+        else {
+            favicon.href = '/public/images/brand/bIcon-white.png'
+            large_favicon.href = '/public/images/brand/bIcon-white.png'
+        }
+    }
+
+    handle_dark_mode(dark_mode_media_query)
+    dark_mode_media_query.addListener(handle_dark_mode)
+</script>
