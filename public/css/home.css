@@ -151,7 +151,7 @@ body {
     margin-left: 40%;
 }
 
-#contacts .contact i{
+#contacts .contact i {
     width: 30px;
 }
 
@@ -188,4 +188,73 @@ body {
 @keyframes fade {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+
+@media only screen and (max-width: 1800px) {
+    #home .event {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #blog .post {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #projects .project .links {
+        position: relative;
+        left: 0px;
+        top: 5px;
+        border-left: none;
+        width: 100%;
+        text-align: left;
+        text-decoration: underline;
+    }
+    
+    #projects .project .description {
+        color: var(--black);
+        font-size: 18px;
+        display:block;
+        width: 100%;
+        font-family: 'Ubuntu', serif;
+        padding-right: 0px;
+        margin-top: 10px;
+        white-space: unset;
+    }
+
+    #contacts .contact {
+        margin-left: 0%;
+    }
+
+    .top .menu {
+        width: 75%;
+    }
+
+}
+
+@media only screen and (max-width: 660px) {
+    #home .event .date {
+        display: none;
+    }
+
+    #blog .post .date {
+        display: none;
+    }
+
+    .top .menu {
+        width: 100%;
+    }
+    
+    .top .menu .buttons .button {
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 16px;
+    }
+
+    #contacts .contact {
+        width: 100%;
+        padding-right: 0px;
+    }
 }
