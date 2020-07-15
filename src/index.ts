@@ -1,6 +1,7 @@
 import express  from "express"
 import body_parser from "body-parser"
 import { renderFile } from "ejs"
+import { log } from "./utils/logger"
 
 const cookie_parser = require('cookie-parser')
 const config = require("../config.json")
@@ -33,5 +34,5 @@ require("./endpoints/milkscript")(app, config)
 require("./endpoints/errors")(app, config)
 
 app.listen(config.port, () =>
-    console.log(`Website started. (${config.port})`)
+    log("info", `Website started. (${config.port})`)
 )
