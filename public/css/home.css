@@ -145,14 +145,19 @@ body {
 }
 
 #contacts .contact {
-    font-size: 25px;
+    position: relative;
+    margin-bottom: 7px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #ddd;
+    margin-left: 350px;
+    margin-right: 350px;
     color: var(--black);
-    padding: 20px;
-    margin-left: 40%;
 }
 
-#contacts .contact i {
-    width: 30px;
+#contacts .contact .name {
+    position: absolute;
+    right: 0;
+    color: var(--black);
 }
 
 #home .event {
@@ -200,6 +205,11 @@ body {
         margin-left: 0;
         margin-right: 0;
     }
+
+    #contacts .contact {
+        margin-left: 250px;
+        margin-right: 250px;
+    }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -224,14 +234,14 @@ body {
         white-space: unset;
     }
 
-    #contacts .contact {
-        margin-left: 0%;
-    }
-
     .top .menu {
         width: 75%;
     }
-
+    
+    #contacts .contact {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 @media only screen and (max-width: 660px) {
@@ -253,8 +263,4 @@ body {
         font-size: 16px;
     }
 
-    #contacts .contact {
-        width: 100%;
-        padding-right: 0px;
-    }
 }
