@@ -32,6 +32,7 @@ app.set("view engine", "ejs")
 require("./endpoints/homepage")(app, config)
 require("./endpoints/milkscript")(app, config)
 require("./endpoints/panel")(app, config)
+require("./endpoints/redirect")(app, config)
 require("./endpoints/errors")(app, config)
 
 app.listen(config.port, () =>
