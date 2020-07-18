@@ -8,9 +8,9 @@ export = (app: Application, config: any) => {
                 .render(path.join("../public/errors/404.ejs"), {})
     })
 
-    app.get('/*', async (req, res) => {
-        return res
-                .status(404)
-                .redirect('/404')
-    })
+    // app.get('/*', async (req, res) => {
+    //     return res
+    //             .status(404)
+    //             .redirect('/404')
+    // })
 }

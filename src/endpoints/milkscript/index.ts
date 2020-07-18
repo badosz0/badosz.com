@@ -13,4 +13,10 @@ export = (app: Application, config: any) => {
                 .status(200)
                 .render(path.join("../public/milkscript/index.ejs"), {})
     })
+
+    app.get('/milkscript/github', async (req, res) => {
+        return res
+                .status(200)
+                .render(path.join("../public/milkscript/index.ejs"), {})
+    })
 }

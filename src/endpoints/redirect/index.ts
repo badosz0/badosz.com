@@ -3,7 +3,7 @@
 import { Application } from "express"
 
 export = (app: Application, config: any) => {
-    // @TODO do this in panel
+    // @TODO do this in panel + stats
     app.get('/:id', async (req, res) => {
         if (config.redirect.hasOwnProperty(req.params.id)) {
             return res.status(200)
