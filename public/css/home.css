@@ -235,9 +235,9 @@ body {
 }
 
 @media only screen and (max-width: 660px) {
-    #home .event .date {
+    /* #home .event .date {
         display: none;
-    }
+    } */
 
     .top .menu {
         width: 100%;
