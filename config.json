@@ -1,0 +1,160 @@
+{
+    "port": 6500,
+    "redirect" : {
+        "github":"https://github.com/badosz0",
+        "snap":"https://www.snapchat.com/add/bwkxx",
+        "snapchat":"https://www.snapchat.com/add/bwkxx",
+        "twitter":"https://twitter.com/badosz_",
+        "discord":"https://discord.gg/badosz",
+        "steam":"https://steamcommunity.com/id/badosz",
+        "youtube":"https://www.youtube.com/channel/UCl-d1TM0p9Rpk3EPvm-cJ_A/",
+        "twitch":"https://twitch.tv/badosz",
+        "reddit":"https://www.reddit.com/user/Badosz",
+        "itch":"https://badosz.itch.io/"
+    },
+    "contacts": [
+        {
+            "name": "Github",
+            "link": "/github",
+            "icon": "fab fa-github"
+        },
+        {
+            "name": "Discord",
+            "link": "/discord",
+            "icon": "fab fa-discord"
+        },
+        {
+            "name": "Twitter",
+            "link": "/twitter",
+            "icon": "fab fa-twitter"
+        },
+        {
+            "name": "Itch.io",
+            "link": "/itch",
+            "icon": "fab fa-itch-io"
+        },
+        {
+            "name": "Twitch",
+            "link": "/twitch",
+            "icon": "fab fa-twitch"
+        },
+        {
+            "name": "Steam",
+            "link": "/steam",
+            "icon": "fab fa-steam"
+        },
+        {
+            "name": "E-Mail",
+            "link": "mailto:m@badosz.com",
+            "icon": "fas fa-envelope"
+        }
+    ],
+    "projects": [
+        {
+            "name": "MilkScript",
+            "description": "A dynamic programming language that compiles into Lua. It provides things that are not normally possible in Lua like default parameters, switches, classes and much more. MilkScript also catches many errors like undeclared identifier. Unlike lua, arrays are zero-based. Currently this language is still in development.",
+            "image": "milkscript.png",
+            "links": [
+                {
+                    "name": "Website",
+                    "link": "/discord"
+                },
+                {
+                    "name": "Github",
+                    "link": "/discord"
+                }
+            ]
+        },
+        {
+            "name": "Image API",
+            "description": "An api for image generation and text manipulation. Mostly used in discord bots. Api contains 50+ different endpoints and is developed using TypeScript.",
+            "image": "api.png",
+            "links": [
+                {
+                    "name": "Website",
+                    "link": "https://api.badosz.com"
+                }
+            ]
+        },
+        {
+            "name": "Salio",
+            "description": "A small and minimalistic, but still super hard platformer game about getting a tiny fellow through numerous rooms filled with various obstacles. Developed only in free time. This game was released on Steam and programmed in Lua.",
+            "image": "salio.png",
+            "links": [
+                {
+                    "name": "Steam",
+                    "link": "https://store.steampowered.com/app/875810/Salio/"
+                },
+                {
+                    "name": "Discord",
+                    "link": "/discord"
+                }
+            ],
+            "with": [
+                {
+                    "name": "@kajetan_a",
+                    "link": "https://twitter.com/kajetan_a"
+                }
+            ]
+        },
+        {
+            "name": "Jam Games",
+            "description": "A list of games that I developed during game jams (in 72 hours). Most of them are written in Lua.<br><br><a href='https://badosz.itch.io/dear-president'>Dear President</a> - A skill point & click game.<br><br><a href='https://badosz.itch.io/curfe'>Curfe</a> - A skill and luck based game about being a currency.<br><br><a href='https://badosz.itch.io/satan-island'>Satan's Island</a> - A point & click game about expanding island by sacrificing the civilians. <br><br><a href='https://badosz.itch.io/mr-moustache'>Mr. Moustache</a> - A skill game about shooting moustache with a moustache. <br><br><a href='https://badosz.itch.io/the-fall'>The Fall</a> - A game about being a yellow submarine that is running out of power. ",
+            "image": "dear-president.png",
+            "links": [
+                {
+                    "name": "Itch.io",
+                    "link": "https://badosz.itch.io/"
+                },
+                {
+                    "name": "Discord",
+                    "link": "/discord"
+                }
+            ],
+            "with": [
+                {
+                    "name": "@kajetan_a",
+                    "link": "https://twitter.com/kajetan_a"
+                }
+            ]
+        }
+    ],
+    "timeline": [
+        {
+            "event": "Released \"Dear President,\"",
+            "year": 2020
+        },
+        {
+            "event": "Showcased a game at PGA 2019",
+            "year": 2019
+        },
+        {
+            "event": "Released \"Salio\"",
+            "year": 2019
+        },
+        {
+            "event": "Released \"Curfe\"",
+            "year": 2019
+        },
+        {
+            "event": "Published \"api.badosz.com\"",
+            "year": 2019
+        },
+        {
+            "event": "Showcased \"Salio\" at PGA 2018",
+            "year": 2018
+        },
+        {
+            "event": "Released \"Mr. Moustache\"",
+            "year": 2018
+        },
+        {
+            "event": "Released \"The Fall\"",
+            "year": 2017
+        },
+        {
+            "event": "Was born",
+            "year": 2002
+        }
+    ]
+}
