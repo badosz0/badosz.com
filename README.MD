@@ -1,6 +1,6 @@
 [**badosz.com**](https://badosz.com)
 -
-My personal website developed using [TypeScript](https://www.typescriptlang.org/) and [Express](https://expressjs.com/).
+My personal website, developed using [TypeScript](https://www.typescriptlang.org/) and [Express](https://expressjs.com/).<br>
 <img src="assets/screenshot.png" alt="Screenshot">
 
 **Run Locally**
