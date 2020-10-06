@@ -3,10 +3,11 @@ import body_parser from "body-parser"
 import { renderFile } from "ejs"
 import { log } from "./utils/logger"
 
-const cookie_parser = require('cookie-parser')
+import cookie_parser from "cookie-parser"
+// @ts-ignore
+import minify_html from "express-minify-html"
 const config = require("../config.json")
 const app = express()
-const minify_html = require('express-minify-html')
 
 app.use(body_parser.text({
     type: "*/*"

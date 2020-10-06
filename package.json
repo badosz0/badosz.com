@@ -4,6 +4,8 @@
   "description": "My personal website",
   "main": "build/index.js",
   "dependencies": {
+    "@types/cookie-parser": "^1.4.2",
+    "@types/ejs": "^3.0.4",
     "cookie-parser": "^1.4.5",
     "request": "^2.88.2"
   },
