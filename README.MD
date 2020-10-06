@@ -8,4 +8,5 @@ My personal website, developed using [TypeScript](https://www.typescriptlang.org
 1. Clone this repository
 2. Run `npm install`
 3. Run `tsc .`
-4. Go to `http://localhost:6500`
+4. Run `node build/index.js`
+5. Go to `http://localhost:6500`
