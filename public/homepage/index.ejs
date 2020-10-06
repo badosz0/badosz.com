@@ -4,12 +4,21 @@
         <title>Bartosz Król - <%= section %></title>
         <%- include ("../struct/meta.ejs") %>
         <%- include ("../struct/fonts.ejs") %>
-        <link rel=stylesheet type=text/css href=/public/css/home.css>
+        <link rel="stylesheet" type="text/css" href="/public/css/home.css">
     </head>
 </html>
 <body>
-    <%- include ("../struct/top.ejs") %>
+    <div class="top">
+        <div class="name">Bartosz Król</div>
+        <div class="description">Programmer</div>
+    </div>
+    <div class="menu">
+        <div class="buttons">
+            <a href="/" class="button<%= section == "home" ? " active" : "" %>">Home</a>
+            <a href="/projects" class="button<%= section == "projects" ? " active" : "" %>">Projects</a>
+            <a href="/contact" class="button<%= section == "contact" ? " active" : "" %>">Contact</a>
+            <!-- <a href="/blog" class="button<%= section == "blog" ? " active" : "" %>">Blog</a> -->
+        </div>
+    </div>
     <%- include (`./${section.toLowerCase()}.ejs`) %>
 </body>
-
-

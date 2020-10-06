@@ -1,50 +1,10 @@
-<div id="contacts" class="content">
-    <a href= "/github" target="_blank">
-        <div class="contact">
-            <span class="icon"><i class="fab fa-github"></i></span>
-            <span class="name">Github</span>
-        </div>
-    </a>
-    <a href= "/discord" target="_blank">
-        <div class="contact">
-            <span class="icon"><i class="fab fa-discord"></i></span>
-            <span class="name">Discord</span>
-        </div>
-    </a>
-    <a href= "/twitter" target="_blank">
-        <div class="contact">
-            <span class="icon"><i class="fab fa-twitter"></i></span>
-            <span class="name">Twitter</span>
-        </div>
-    </a>
-    <a href= "/youtube" target="_blank">
-        <div class="contact">
-            <span class="icon"><i class="fab fa-youtube"></i></span>
-            <span class="name">Youtube</span>
-        </div>
-    </a>
-    <a href= "/itch" target="_blank">
-        <div class="contact">
-            <span class="icon"><i class="fab fa-itch-io"></i></span>
-            <span class="name">Itch.io</span>
-        </div>
-    </a>
-    <a href= "/twitch" target="_blank">
-        <div class="contact">
-            <span class="icon"><i class="fab fa-twitch"></i></span>
-            <span class="name">Twitch</span>
-        </div>
-    </a>
-    <a href= "/steam" target="_blank">
-        <div class="contact">
-            <span class="icon"><i class="fab fa-steam"></i></span>
-            <span class="name">Steam</span>
-        </div>
-    </a>
-    <a href= "mailto:m@badosz.com" target="_blank">
-        <div class="contact">
-            <span class="icon"><i class="fas fa-envelope"></i></span>
-            <span class="name">Mail</span>
-        </div>
-    </a>
+<div class="contacts">
+    <% for (contact of contacts) { %>
+        <a href= "<%=contact.link%>" target="_blank">
+            <div class="contact">
+                <span class="icon"><i class="<%=contact.icon%>"></i></span>
+                <span class="name"><%=contact.name%></span>
+            </div>
+        </a>
+    <% } %>
 </div>

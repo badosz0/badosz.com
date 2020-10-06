@@ -3,6 +3,7 @@
     --black: #333;
     --gray:  #DDD;
     --more-gray: gray;
+    --blue: #1DA1F2;
 }
 
 html {
@@ -16,10 +17,11 @@ html {
 a {
     text-decoration: none;
     cursor: pointer;
+    color: var(--more-gray);
 }
 
-a:hover {
-    text-decoration: underline;
+a:visited {
+    text-decoration: none
 }
 
 body {
@@ -27,230 +29,178 @@ body {
     color: var(--black);
     font-family: 'Roboto Mono';
     margin: 0;
-    padding: 0;
+    padding: 100px 20px 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.top {
-    height: 250px;
-    width: 100%;
-    position: relative;
-}
 
 .top .name {
-    white-space: nowrap;
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'Source Serif Pro', serif;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 26px;
 }
 
-.top .menu {
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    height: 50px;
-    border-top: solid 1px var(--gray);
+.menu {
+    margin: 30px;
+    padding-bottom: 10px;
+    padding-top: 10px;
     border-bottom: solid 1px var(--gray);
+    border-top: solid 1px var(--gray);
 }
 
-.top .menu .buttons {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    line-height: 50px;
-    text-align: center;
-}
-
-.top .menu .buttons .button {
-    text-decoration: none;
-    color: var(--black);
+.menu .button {
+    color: var(--more-gray);
+    font-style: italic;
     margin-left: 20px;
     margin-right: 20px;
-    font-size: 18px;
 }
 
-.top .buttons .button.active {
+.menu .button.active {
     text-decoration: underline;
 }
 
-.content {
+.timeline {
+    width: auto;
     position: relative;
-    /* display: none; */
+    margin-top: 50px;
+}
+
+.timeline .event {
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.timeline .event .year {
+    color: var(--gray);
+    border-right: solid 1px var(--gray);
+    padding-right: 10px;
+}
+
+.projects {
+    position: relative;
     animation: fade 1s;
-    width: 50%;
-    left: 50%;
-    transform: translate(-50%, 0);
+    width: 700px;
     margin-bottom: -100px; 
+    margin-top: 50px;
 }
 
-.content:after {
-  content: "";
-  display: block;
-}
-
-#projects .project {
+.projects .project {
     position: relative;
     margin-bottom: 40px;
+    text-align: left;
+    align-items: left;
+    justify-content: left;
 }
 
-#projects .project .name {
+.projects .description a {
+    color: var(--black);
+    /* font-style: italic; */
+    font-weight: bold;
+}
+
+.projects .description a:hover {
+    text-decoration: underline;
+}
+
+.projects .project .name {
     color: var(--black);
     font-weight: bold;
-    font-size: 30px;
+    font-size: 24px;
 }
 
-#projects .project .description {
-    color: var(--black);
-    font-size: 18px;
-    display:block;
-    width: 70%;
-    font-family: 'Ubuntu', serif;
-    padding-right: 30px;
-    margin-top: 10px;
-    white-space: unset;
-}
-
-#projects .project .links {
-    color: var(--more-gray);
-    margin-top: 5px;
-}
-
-#projects .project .links .link {
-    color: var(--more-gray);
-}
-
-#projects .project .description .twitter {
-    color: #1DA1F2;
-}
-
-#projects .project .description .discord {
-    color: #7289DA;
-}
-
-#projects .project .description .image {
+.projects .project .image {
     width: 100%; 
     margin-top: 20px;
 }
 
-#projects .break  {
-    width: 50px;
+.projects .project .links {
+    color: var(--gray);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.projects .project .links .link {
+    color: var(--more-gray);
+    text-decoration: none;
+}
+
+.projects .project .links .link:hover {
+    text-decoration: underline;
+}
+
+.projects .break {
+    width: 100px;
     left: 0;
     border: solid 1px var(--gray);
     margin-bottom: 40px;
 }
 
-#contacts .contact {
+
+.projects .project .with .text {
+    color: var(--gray);
+    font-style: italic;
+}
+
+.projects .project .with .link {
+    color: var(--more-gray);
+}
+
+.projects .project .with .link:hover {
+    color: var(--more-gray);
+    text-decoration: underline;
+}
+
+.contacts {
+    position: relative;
+    width: 300px;
+    margin-bottom: -100px; 
+    margin-top: 50px;
+}
+
+.contacts .contact {
     position: relative;
     margin-bottom: 7px;
     padding-bottom: 10px;
     border-bottom: solid 1px var(--gray);
-    margin-left: 350px;
-    margin-right: 350px;
+    color: var(--black);
+    text-align: left;
+}
+
+.contacts .contact .name {
+    position: absolute;
+    right: 0;
     color: var(--black);
 }
 
-#contacts .contact .name {
-    position: absolute;
-    right: 0;
-    color: var(--black);
-}
-
-#home .event {
-    position: relative;
-    margin-bottom: 7px;
-    padding-bottom: 10px;
-    border-bottom: solid 1px var(--gray);
-    margin-left: 250px;
-    margin-right: 250px;
-}
-
-#home .event .date {
-    position: absolute;
-    right: 0;
-    color: var(--gray);
-}
-
-#blog .post {
-    position: relative;
-    margin-bottom: 7px;
-    padding-bottom: 10px;
-    border-bottom: solid 1px var(--gray);
-    margin-left: 150px;
-    margin-right: 150px;
-}
-
-#blog .post .date {
-    position: absolute;
-    right: 0;
-    color: var(--gray);
-}
-
-@keyframes fade {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-@media only screen and (max-width: 1800px) {
-    #home .event {
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    #blog .post {
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    #contacts .contact {
-        margin-left: 250px;
-        margin-right: 250px;
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    #projects .project .description {
-        color: var(--black);
-        font-size: 18px;
-        display:block;
-        width: 100%;
-        font-family: 'Ubuntu', serif;
-        padding-right: 0px;
-        margin-top: 10px;
-        white-space: unset;
-    }
-
-    .top .menu {
-        width: 75%;
+@media only screen and (max-width: 750px) {
+    .projects {
+        position: relative;
+        animation: fade 1s;
+        width: 90%;
+        margin-bottom: -100px; 
+        margin-top: 50px;
     }
     
-    #contacts .contact {
-        margin-left: 0;
-        margin-right: 0;
+    .projects .project {
+        position: relative;
+        margin-bottom: 40px;
+        text-align: left;
+        align-items: left;
+        justify-content: left;
     }
-}
 
-@media only screen and (max-width: 660px) {
-    /* #home .event .date {
-        display: none;
-    } */
 
-    .top .menu {
-        width: 100%;
+    .timeline .event {
+        font-size: 15px;
     }
-    
-    .top .menu .buttons .button {
+
+
+    .menu .button {
         margin-left: 10px;
         margin-right: 10px;
-        font-size: 16px;
-    }
-
-    .content {
-        width: 90%;
     }
 
 }

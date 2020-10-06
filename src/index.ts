@@ -30,11 +30,6 @@ app.set("view engine", "ejs")
 
 
 require("./endpoints/homepage")(app, config)
-require("./endpoints/milkscript")(app, config)
-require("./endpoints/panel")(app, config)
-require("./endpoints/webhooks")(app, config)
-require("./endpoints/errors")(app, config)
-require("./endpoints/redirect")(app, config) 
 
 app.listen(config.port, () =>
     log("info", `Website started. (${config.port})`)
