@@ -26,6 +26,8 @@ export = (app: Application, config: any) => {
                     return res.status(200).json(config.projects)
                 case "contact.json":
                     return res.status(200).json(config.contacts)
+                case "robots.txt":
+                    return res.sendFile(path.join(__dirname, "../../public/robots.txt"))
                 default: 
                     if (config.redirect[id]) {
                         res.redirect(config.redirect[id])
