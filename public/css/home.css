@@ -1,7 +1,7 @@
 :root {
     --white: #FFF; 
     --black: #333;
-    --gray:  #DDD;
+    --gray:  #ababab;
     --more-gray: gray;
     --blue: #1DA1F2;
 }
@@ -56,6 +56,8 @@ body {
     font-style: italic;
     margin-left: 20px;
     margin-right: 20px;
+    padding-bottom: 14px;
+    padding-top: 14px;
 }
 
 .menu .button.active {

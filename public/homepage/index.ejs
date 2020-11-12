@@ -4,7 +4,8 @@
         <title>Bartosz Król - <%= section %></title>
         <%- include ("../struct/meta.ejs") %>
         <%- include ("../struct/fonts.ejs") %>
-        <link rel="stylesheet" type="text/css" href="/public/css/home.css">
+        <%- include ("../struct/js.ejs") %>
+        <link rel="stylesheet" type="text/css" href="/public/css/home.css" async >
     </head>
 </html>
 <body>
@@ -12,13 +13,15 @@
         <div class="name">Bartosz Król</div>
         <div class="description">Programmer</div>
     </div>
-    <div class="menu">
-        <div class="buttons">
-            <a href="/" class="button<%= section == "home" ? " active" : "" %>">Home</a>
-            <a href="/projects" class="button<%= section == "projects" ? " active" : "" %>">Projects</a>
-            <a href="/contact" class="button<%= section == "contact" ? " active" : "" %>">Contact</a>
-            <!-- <a href="/blog" class="button<%= section == "blog" ? " active" : "" %>">Blog</a> -->
+    <main id="main">
+        <div class="menu">
+            <div class="buttons">
+                <a href="/" class="button<%= section == "home" ? " active" : "" %>">Home</a>
+                <a href="/projects" class="button<%= section == "projects" ? " active" : "" %>">Projects</a>
+                <a href="/contact" class="button<%= section == "contact" ? " active" : "" %>">Contact</a>
+                <!-- <a href="/blog" class="button<%= section == "blog" ? " active" : "" %>">Blog</a> -->
+            </div>
         </div>
-    </div>
+    </main>
     <%- include (`./${section.toLowerCase()}.ejs`) %>
 </body>
