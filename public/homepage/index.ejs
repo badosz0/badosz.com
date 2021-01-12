@@ -2,26 +2,27 @@
 <html lang="en" dir="ltr">
     <head>
         <title>Bartosz Król - <%= section %></title>
+        <link rel="stylesheet" type="text/css" href="/public/css/home.css" async >
         <%- include ("../struct/meta.ejs") %>
         <%- include ("../struct/fonts.ejs") %>
         <%- include ("../struct/js.ejs") %>
-        <link rel="stylesheet" type="text/css" href="/public/css/home.css" async >
     </head>
-</html>
-<body>
-    <div class="top">
-        <div class="name">BARTOSZ KRÓL</div>
-        <div class="description">Programmer</div>
-    </div>
-    <main id="main">
-        <div class="menu">
-            <div class="buttons">
-                <a href="/" class="button<%= section == "home" ? " active" : "" %>">HOME</a>
-                <a href="/projects" class="button<%= section == "projects" ? " active" : "" %>">PROJECTS</a>
-                <a href="/contact" class="button<%= section == "contact" ? " active" : "" %>">CONTACT</a>
-                <!-- <a href="/blog" class="button<%= section == "blog" ? " active" : "" %>">Blog</a> -->
-            </div>
+    <body>
+        <div class="top">
+            <div class="name" id="theme">BARTOSZ KRÓL</div>
+            <div class="description">Programmer</div>
         </div>
-    </main>
-    <%- include (`./${section.toLowerCase()}.ejs`) %>
-</body>
+        <main id="main">
+            <div class="menu">
+                <div class="buttons">
+                    <a href="/" class="button<%= section == "home" ? " active" : "" %>">HOME</a>
+                    <a href="/projects" class="button<%= section == "projects" ? " active" : "" %>">PROJECTS</a>
+                    <a href="/contact" class="button<%= section == "contact" ? " active" : "" %>">CONTACT</a>
+                    <!-- <a href="/blog" class="button<%= section == "blog" ? " active" : "" %>">Blog</a> -->
+                </div>
+            </div>
+        </main>
+        <%- include (`./${section.toLowerCase()}.ejs`) %>
+    </body>
+</html>
+<script type="text/javascript" src="/public/js/theme.js"></script>

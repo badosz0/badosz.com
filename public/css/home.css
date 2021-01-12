@@ -6,6 +6,16 @@
     --blue: #1DA1F2;
 }
 
+html[data-theme='dark'] 
+{
+    --white: #272727; 
+    --black: #FFF;
+    --gray:  #666;
+    --more-gray: #a8a8a8;
+    --blue: #1DA1F2;
+}
+
+
 html {
     overflow:   scroll;
 }
@@ -41,6 +51,10 @@ body {
 .top .name {
     font-weight: bold;
     font-size: 26px;
+    -webkit-user-select: none;     
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .menu {
