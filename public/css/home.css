@@ -1,14 +1,14 @@
 :root {
-    --white: #FFF; 
+    --white: #FFF;
     --black: #272727;
     --gray:  #a8a8a8;
     --more-gray: #666;
     --blue: #1DA1F2;
 }
 
-html[data-theme='dark'] 
+html[data-theme='dark']
 {
-    --white: #272727; 
+    --white: #272727;
     --black: #FFF;
     --gray:  #666;
     --more-gray: #a8a8a8;
@@ -20,7 +20,7 @@ html {
     overflow:   scroll;
 }
 ::-webkit-scrollbar {
-    width: 0px;
+    width: 0;
     background: transparent;
 }
 
@@ -51,7 +51,7 @@ body {
 .top .name {
     font-weight: bold;
     font-size: 26px;
-    -webkit-user-select: none;     
+    -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -106,7 +106,7 @@ body {
     position: relative;
     animation: fade 1s;
     width: 700px;
-    margin-bottom: -100px; 
+    margin-bottom: -100px;
     margin-top: 50px;
 }
 
@@ -135,7 +135,7 @@ body {
 }
 
 .projects .project .image {
-    width: 100%; 
+    width: 100%;
     margin-top: 20px;
 }
 
@@ -179,7 +179,7 @@ body {
 .contacts {
     position: relative;
     width: 300px;
-    margin-bottom: -100px; 
+    margin-bottom: -100px;
     margin-top: 50px;
 }
 
@@ -203,7 +203,7 @@ body {
         position: relative;
         animation: fade 1s;
         width: 90%;
-        margin-bottom: -100px; 
+        margin-bottom: -100px;
         margin-top: 50px;
     }
     

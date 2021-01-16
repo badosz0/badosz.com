@@ -14,8 +14,8 @@ export = (app: Application, config: any) => {
                 case "contact":
                     return res
                         .status(200)
-                        .render(path.join("../public/homepage/index.ejs"), { 
-                            section: id, 
+                        .render(path.join("../public/homepage/index.ejs"), {
+                            section: id,
                             timeline: config.timeline,
                             projects: config.projects,
                             contacts: config.contacts
@@ -28,7 +28,7 @@ export = (app: Application, config: any) => {
                     return res.status(200).json(config.contacts)
                 case "robots.txt":
                     return res.sendFile(path.join(__dirname, "../../public/robots.txt"))
-                default: 
+                default:
                     if (config.redirect[id]) {
                         res.redirect(config.redirect[id])
                     } else {
