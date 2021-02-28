@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from "@fortawesome/free-solid-svg-icons"
+import Layout from "../components/Layout"
 
 export default function Home() {
     return (
@@ -10,9 +11,12 @@ export default function Home() {
                 <a>test</a>
             </Link> */}
 
-            <div className="text-base p-4"> 
+            {/* <div className="text-base p-4"> 
                 Coffee <FontAwesomeIcon icon={faCoffee}/>
-            </div>
+            </div> */}
+            <Layout>
+                
+            </Layout>
         </>
     )
 }
