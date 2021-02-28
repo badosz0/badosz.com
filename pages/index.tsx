@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from "@fortawesome/free-solid-svg-icons"
 import Layout from "../components/Layout"
@@ -14,8 +13,8 @@ export default function Home() {
             {/* <div className="text-base p-4"> 
                 Coffee <FontAwesomeIcon icon={faCoffee}/>
             </div> */}
-            <Layout>
-                
+            <Layout section="home">
+
             </Layout>
         </>
     )
