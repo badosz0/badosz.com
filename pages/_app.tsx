@@ -29,6 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 <link rel="shortcut icon" href="/public/images/brand/bIcon-white.png"></link>
                 <link rel="icon" href="/images/brand/bIcon-white.png"></link>
                 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet"/> 
+                <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&amp;display=swap" rel="stylesheet" />
 
             </Head>
             <Component {...pageProps} />

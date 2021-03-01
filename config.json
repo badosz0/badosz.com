@@ -1,0 +1,40 @@
+{
+    "events": [
+        {
+            "date": 2020,
+            "name": "Released \"Dear President,\""
+        },
+        {
+            "date": 2019,
+            "name": "Showcased a game at PGA 2019"
+        },
+        {
+            "date": 2019,
+            "name": "Released \"Salio\""
+        },
+        {
+            "date": 2019,
+            "name": "Released \"Curfe\""
+        },
+        {
+            "date": 2019,
+            "name": "Published \"api.badosz.com\""
+        },
+        {
+            "date": 2018,
+            "name": "Showcased \"Salio\" at PGA 2018"
+        },
+        {
+            "date": 2018,
+            "name": "Released \"Mr. Moustache\""
+        },
+        {
+            "date": 2017,
+            "name": "Released \"The Fall\""
+        },
+        {
+            "date": 2002,
+            "name": "Was born"
+        }
+    ]
+}

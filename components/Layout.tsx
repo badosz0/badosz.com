@@ -14,7 +14,7 @@ export default function Layout({children, section}: Props) {
                 <div>
                     <Header />
                     <Menu section={section}/>
-                    <div>
+                    <div className="flex justify-center items-center">
                         {children}
                     </div>
                 </div>
