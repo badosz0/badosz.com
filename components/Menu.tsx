@@ -1,10 +1,27 @@
-import Option from "../components/Option"
+import clsx from "clsx"
+import Link from "next/link"
 
-interface Props {
+interface OptionProps {
+    name: string
+    active: boolean
+    link: string
+}
+
+interface MenuProps {
     section: string
 }
 
-export default function Menu({section}: Props) {
+function Option({name, active, link}: OptionProps) {
+    return (
+        <div className={clsx("mx-6 text-sm", active ? "text-gray-600" : "text-gray-400")}>
+            <Link href={`/${link}`}>
+                <a>{name}</a>
+            </Link>
+        </div>
+    )
+}
+
+export default function Menu({section}: MenuProps) {
     return (
         <div className="flex flex-wrap content-center mt-10 border-t border-b border-gray-500 py-2">
             <Option 
