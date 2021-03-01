@@ -23,7 +23,7 @@ function Option({name, active, link}: OptionProps) {
 
 export default function Menu({section}: MenuProps) {
     return (
-        <div className="flex flex-wrap content-center mt-10 border-t border-b border-gray-500 py-2">
+        <div className="flex flex-wrap content-center mt-10 border-t border-b border-gray-300 py-2">
             <Option 
                 name="HOME"
                 link=""
