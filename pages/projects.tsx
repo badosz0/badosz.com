@@ -47,7 +47,7 @@ export default function Projects() {
                     <Project
                         name="Obrazium"
                         links={[["Website", "https://obrazium.com"]]}
-                        description="An api for image generation and text manipulation. Mostly used in discord bots. Api contains 50+ different endpoints."
+                        description="An api for image generation and text manipulation. Mostly used in discord bots. Obrazium contains 50+ different endpoints."
                         image="/images/projects/obrazium.png"
                     />
                     <Project
