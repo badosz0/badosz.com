@@ -1,8 +1,0 @@
-# robots.txt
-
-User-agent: *
-Disallow: /snap
-
-User-agent: FBI
-Disallow: /
-

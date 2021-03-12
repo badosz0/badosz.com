@@ -1,20 +1,4 @@
 {
-<<<<<<< HEAD
-  "compilerOptions": {
-    "target": "ES6",
-    "module": "commonjs",
-    "lib": ["es6", "dom"],
-    "outDir": "./build",
-    "strict": true,
-    "moduleResolution": "node",
-    "baseUrl": "./src",
-    "typeRoots": ["node_modules/@types"],
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-  }
-}
-=======
     "compilerOptions": {
 	    "target": "es5",
 	    "lib": [
@@ -43,4 +27,3 @@
     	"node_modules"
     ] 
 }
->>>>>>> react

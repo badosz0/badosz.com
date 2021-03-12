@@ -1,38 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "badosz.com",
-  "version": "1.0.0",
-  "description": "My personal website",
-  "main": "build/index.js",
-  "dependencies": {
-    "@types/cookie-parser": "^1.4.2",
-    "@types/ejs": "^3.0.4",
-    "cookie-parser": "^1.4.5",
-    "ejs": "^3.1.5",
-    "express": "^4.17.1",
-    "express-minify-html": "^0.12.0",
-    "request": "^2.88.2"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/badosz0/badosz.com.git"
-  },
-  "keywords": [
-    "website",
-    "homepage",
-    "portfolio"
-  ],
-  "author": "Bartosz Król",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/badosz0/badosz.com/issues"
-  },
-  "homepage": "https://github.com/badosz0/badosz.com#readme"
-=======
     "name": "badosz.com",
     "version": "0.1.0",
     "private": true,
@@ -59,5 +25,4 @@
         "tailwindcss": "^2.0.3",
         "typescript": "^4.1.5"
     }
->>>>>>> react
 }
