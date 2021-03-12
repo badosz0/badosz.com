@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from "@fortawesome/free-solid-svg-icons"
 import Layout from "../components/Layout"
 
 const config = require("../config.json")
@@ -21,9 +19,6 @@ function Event({date, name}: EventProps) {
 export default function Home() {
     return (
         <>
-            {/* <div className="text-base p-4"> 
-                Coffee <FontAwesomeIcon icon={faCoffee}/>
-            </div> */}
             <Layout section="home">
                 <div className="mt-16 space-y-2">
                     {config.events.map(event => {
