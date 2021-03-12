@@ -21,6 +21,10 @@ export default function Home() {
             <Layout section="home">
                 <div className="mt-16 space-y-2">
                     <Event
+                        date={2021}
+                        name={"Released \"Obrazium\""}
+                    />
+                    <Event
                         date={2020}
                         name={"Released \"Dear President,\""}
                     />
