@@ -1,6 +1,5 @@
 import Layout from "../components/Layout"
 
-const config = require("../config.json")
 
 interface EventProps {
     date: number
@@ -21,12 +20,42 @@ export default function Home() {
         <>
             <Layout section="home">
                 <div className="mt-16 space-y-2">
-                    {config.events.map(event => {
-                        return (<Event
-                            date={event.date}
-                            name={event.name}
-                        />)
-                    })}
+                    <Event
+                        date={2020}
+                        name={"Released \"Dear President,\""}
+                    />
+                    <Event
+                        date={2019}
+                        name={"Showcased a game at PGA 2019"}
+                    />
+                    <Event
+                        date={2019}
+                        name={"Released \"Salio\""}
+                    />
+                    <Event
+                        date={2019}
+                        name={"Released \"Curfe\""}
+                    />
+                    <Event
+                        date={2019}
+                        name={"Published \"api.badosz.com\""}
+                    />
+                    <Event
+                        date={2019}
+                        name={"Showcased \"Salio\" at PGA 2018"}
+                    />
+                    <Event
+                        date={2018}
+                        name={"Released \"Mr. Moustache\""}
+                    />
+                    <Event
+                        date={2017}
+                        name={"Released \"The Fall\""}
+                    />
+                    <Event
+                        date={2002}
+                        name={"Was born"}
+                    />
                 </div>
             </Layout>
         </>

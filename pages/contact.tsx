@@ -3,8 +3,6 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Layout from "../components/Layout"
 
-const config = require("../config.json")
-
 interface ContactLinkProps {
     name: string
     link: string
