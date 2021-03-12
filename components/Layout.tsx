@@ -9,16 +9,14 @@ interface Props {
 
 export default function Layout({children, section}: Props) {
     return (
-        <>
-            <div className="flex justify-center items-center mt-28">
-                <div>
-                    <Header />
-                    <Menu section={section}/>
-                    <div className="flex justify-center items-center">
-                        {children}
-                    </div>
+        <div className="mt-28">
+            <div>
+                <Header />
+                <Menu section={section}/>
+                <div className="flex justify-center items-center">
+                    {children}
                 </div>
             </div>
-        </>
+        </div>
     )
 }

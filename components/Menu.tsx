@@ -23,22 +23,24 @@ function Option({name, active, link}: OptionProps) {
 
 export default function Menu({section}: MenuProps) {
     return (
-        <div className="flex flex-wrap content-center mt-10 border-t border-b border-gray-300 py-2">
-            <Option 
-                name="HOME"
-                link=""
-                active={section == "home"}
-            />
-            <Option 
-                name="PROJECTS"
-                link="projects"
-                active={section == "projects"}
-            />
-            <Option 
-                name="CONTACT"
-                link="contact"
-                active={section == "contact"}
-            />
+        <div className="w-full flex justify-center">
+            <div className="flex flex-wrap content-center mt-10 border-t border-b border-gray-300 py-2 w-max">
+                <Option 
+                    name="HOME"
+                    link=""
+                    active={section == "home"}
+                />
+                <Option 
+                    name="PROJECTS"
+                    link="projects"
+                    active={section == "projects"}
+                />
+                <Option 
+                    name="CONTACT"
+                    link="contact"
+                    active={section == "contact"}
+                />
+            </div>
         </div>
     )
 }
