@@ -2,6 +2,7 @@ import { faDiscord, faGithub, faItchIo, faSteam, faTwitch, faTwitter, IconDefini
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Layout from "../components/Layout"
+import Link from 'next/link'
 
 interface ContactLinkProps {
     name: string
@@ -11,10 +12,14 @@ interface ContactLinkProps {
 
 function ContactLink({name, link, icon}: ContactLinkProps) {
     return (
-        <div className="text-base w-72 relative border-b border-gray-300 py-0.5">
-            <div className="inline-block"><FontAwesomeIcon icon={icon}/></div>
-            <div className="inline-block absolute right-0">{name}</div>
-        </div>
+        <Link href={link}>
+            <a target="_blank">
+                <div className="text-base w-72 relative border-b border-gray-300 py-1.5 cursor-pointer">
+                    <div className="inline-block"><FontAwesomeIcon icon={icon}/></div>
+                    <div className="inline-block absolute right-0">{name}</div>
+                </div>
+            </a>
+        </Link>
     )
 }
 
@@ -62,6 +67,4 @@ export default function Contact() {
             </Layout>
         </>
     )
-}            {/* <div className="text-base p-4"> 
-Coffee <FontAwesomeIcon icon={faCoffee}/>
-</div> */}
+}
