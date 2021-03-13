@@ -13,7 +13,7 @@ interface MenuProps {
 
 function Option({name, active, link}: OptionProps) {
     return (
-        <div className={clsx("mx-6 text-sm", active ? "text-gray-600" : "text-gray-400")}>
+        <div className={clsx("mx-3 md:mx-6 text-sm", active ? "text-gray-600" : "text-gray-400")}>
             <Link href={`/${link}`}>
                 <a>{name}</a>
             </Link>
@@ -39,6 +39,11 @@ export default function Menu({section}: MenuProps) {
                     name="CONTACT"
                     link="contact"
                     active={section == "contact"}
+                />
+                <Option 
+                    name="BLOG"
+                    link="blog"
+                    active={section == "blog"}
                 />
             </div>
         </div>

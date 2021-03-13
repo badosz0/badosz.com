@@ -1,6 +1,5 @@
 import Layout from "../components/Layout"
 
-
 interface EventProps {
     date: number
     name: string
