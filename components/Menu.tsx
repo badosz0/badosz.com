@@ -25,22 +25,22 @@ export default function Menu({section}: MenuProps) {
     return (
         <div className="w-full flex justify-center">
             <div className="flex flex-wrap content-center mt-10 border-t border-b border-gray-300 py-2 w-max">
-                <Option 
+                <Option
                     name="HOME"
                     link=""
                     active={section == "home"}
                 />
-                <Option 
+                <Option
                     name="PROJECTS"
                     link="projects"
                     active={section == "projects"}
                 />
-                <Option 
+                <Option
                     name="CONTACT"
                     link="contact"
                     active={section == "contact"}
                 />
-                <Option 
+                <Option
                     name="BLOG"
                     link="blog"
                     active={section == "blog"}
