@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import '../styles/globals.css'
-
+import { NextSeo } from 'next-seo'
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false
@@ -30,8 +30,12 @@ export default function App({ Component, pageProps }: AppProps) {
                 <link rel="icon" href="/images/brand/bIcon-white.png"></link>
                 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet"/>
                 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&amp;display=swap" rel="stylesheet" />
-
             </Head>
+            <NextSeo 
+                title="Batosz Król"
+                description="Programmer."
+                canonical="https://www.badosz.com/"
+            />
             <Component {...pageProps} />
         </>
     )

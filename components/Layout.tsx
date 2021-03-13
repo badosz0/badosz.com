@@ -9,7 +9,7 @@ interface Props {
 
 export default function Layout({children, section}: Props) {
     return (
-        <div className="mt-28">
+        <main className="mt-28">
             <div>
                 <Header />
                 <Menu section={section}/>
@@ -17,6 +17,6 @@ export default function Layout({children, section}: Props) {
                     {children}
                 </div>
             </div>
-        </div>
+        </main>
     )
 }
