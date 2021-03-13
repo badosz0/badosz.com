@@ -16,11 +16,18 @@ function CodeBlock({ language, value }) {
 
 export default function Post({post}) {
     const time = Math.round(post.content.split(" ").length / 200)
+    const description = `${post.content.substring(0, 15)}...`
 
     return (
         <>
             <Head>
                 <title>{post.name}</title>
+                <meta name="twitter:title" content={post.name} key="twitter-title" />
+                <meta name="twitter:description" content={description} key="twitter-description" />
+                <meta name="description" content={description} key="description"/>
+                <meta property="og:title" content={post.name} key="og-title"/>
+                <meta property="og:image" content={post.image} key="og-image"/>
+                <meta property="og:description" content={description} key="og-description"/>
             </Head>
             <div className="flex justify-center">
                 <div className="w-10/12 md:w-8/12 lg:w-6/12 mt-36 relative">

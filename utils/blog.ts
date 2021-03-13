@@ -8,11 +8,14 @@ export function get_posts() {
 
         const name = data[0]
         const date = data[1]
-        data.splice(0, 2)
+        const image = data[2]
+        
+        data.splice(0, 3)
 
         return {
             name,
             date,
+            image,
             path: post.replace(".md", ""),
             content: data.join("\n")
         }
