@@ -1,22 +1,25 @@
 Obrazium next update
 March 13, 2021
 /images/blog/obrazium-next-update/newdesign.png
-Obrazium launched on February 06, 2021 and it has been growing since then. 
-It successfully recived over 10.000 requests in last month itself (that's 300+ every day🎉). 
+Obrazium launched on February 06, 2021 and it has been growing since then.
+It successfully recived over 10.000 requests in last month itself (that's 300+ every day🎉).
 Obviously it's still not perfect and there are important things missing like a good documentation or terms of service.
 
 <br />
 
 ### Stats
 
-Most requested endpoints: 
+Most requested endpoints:
+
 1. catgirl
 2. dog
 3. bird
 4. fact
-5. trump 
+5. trump
+
 <br />
-Most active day: 
+   
+Most active day:
 
 March 11, 2021
 
@@ -28,11 +31,9 @@ I really liked the current design, but I felt like it could be a little more "pr
 
 <br/>
 
-
 ![New Design](/images/blog/obrazium-next-update/newdesign.png "New Design")
 
 <br/>
-
 
 ### Sharing
 
@@ -49,4 +50,3 @@ I'm also thinking about adding a page where everyone can add their discord bots 
 ### Release Date
 
 I'm planning to release this update mid April, but knowing me, I'm not promising anything 😅.
-

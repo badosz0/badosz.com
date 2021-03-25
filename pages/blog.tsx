@@ -1,14 +1,14 @@
-import Layout from "../components/Layout"
-import Link from 'next/link'
-import { get_posts } from "../utils/blog"
+import Layout from "../components/Layout";
+import Link from "next/link";
+import { get_posts } from "../utils/blog";
 
 interface BlogPostProps {
-    name: string
-    date: string
-    link: string
+    name: string;
+    date: string;
+    link: string;
 }
 
-function BlogPost({name, date, link}: BlogPostProps) {
+function BlogPost({ name, date, link }: BlogPostProps) {
     return (
         <Link href={link}>
             <a>
@@ -18,34 +18,29 @@ function BlogPost({name, date, link}: BlogPostProps) {
                 </div>
             </a>
         </Link>
-    )
+    );
 }
 
 export async function getStaticProps() {
-    const posts = get_posts()
+    const posts = get_posts();
 
     return {
         props: {
-            posts
-        }
-    }
+            posts,
+        },
+    };
 }
 
-export default function Contact({posts}) {
+export default function Contact({ posts }) {
     return (
         <>
             <Layout section="blog">
-                 <div className="mt-16 space-y-2">
-                    {posts.map(post => {
-                    return (
-                        <BlogPost
-                            name={post.name}
-                            date={post.date}
-                            link={`/blog/${post.path}`}
-                        />)
+                <div className="mt-16 space-y-2">
+                    {posts.map((post) => {
+                        return <BlogPost name={post.name} date={post.date} link={`/blog/${post.path}`} />;
                     })}
                 </div>
             </Layout>
         </>
-    )
+    );
 }
