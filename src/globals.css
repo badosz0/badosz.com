@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	overflow: scroll;
+	@apply bg-milk;
+	@apply font-sans;
+	@apply antialiased;
+}
+::-webkit-scrollbar {
+	width: 0;
+	background: transparent;
+}
