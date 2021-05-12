@@ -10,7 +10,7 @@ export function HomePage() {
 		<Container>
 			<div className="flex flex-col mt-10 space-y-12 text-main">
 				<div className="flex justify-end space-x-12 font-semibold">
-					<PageLink name="Lights Out" />
+					<PageLink name="Lights Off" />
 					<PageLink name="Projects" />
 					<PageLink name="Blog" />
 					<PageLink name="Contact" />
@@ -31,7 +31,7 @@ export function HomePage() {
 
 				<div className="flex justify-center ">
 					<Link href="mailto:m@badosz.com">
-						<a className="bg-main text-white px-6 py-4 rounded-full">
+						<a className="bg-main text-white px-6 py-4 rounded-full hover:bg-main-hover transition ease-in-out duration-200">
 							Contact Me
 						</a>
 					</Link>
