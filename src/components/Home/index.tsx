@@ -6,12 +6,20 @@ import { array_random } from "../../util/array";
 import Link from "next/link";
 
 export function HomePage() {
+	const open = (url: string) => {
+		const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+		if (newWindow) {
+			newWindow.opener = null;
+		}
+	};
+
 	return (
 		<Container>
 			<div className="flex flex-col mt-10 space-y-12 text-main">
 				<div className="flex justify-end space-x-12 font-semibold">
 					<PageLink name="Lights Off" />
 					<PageLink name="Projects" />
+					<PageLink name="Resume" />
 					<PageLink name="Blog" />
 					<PageLink name="Contact" />
 				</div>
@@ -21,7 +29,17 @@ export function HomePage() {
 					</div>
 					<div className="text-center">
 						<div className="text-7xl font-extrabold">
-							Bartosz Król
+							Bartosz Kr
+							<span
+								onClick={() =>
+									open(
+										"https://www.youtube.com/watch?v=b0q5PR1xpA0"
+									)
+								}
+							>
+								ó
+							</span>
+							l
 						</div>
 						<div className="text-3xl">
 							I code, most of the time.
