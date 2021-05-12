@@ -1,58 +1,76 @@
-import {
-	faDiscord,
-	faGithub,
-	faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
 import { Container } from "../ui/Container";
-import { Contact } from "../ui/Contact";
-import { faEnvelopeSquare } from "@fortawesome/free-solid-svg-icons";
+import { PageLink } from "./PageLink";
+import { Title } from "./Title";
 import { Project } from "./Project";
+import { array_random } from "../../util/array";
+import Link from "next/link";
 
 export function HomePage() {
 	return (
 		<Container>
-			<div className="flex flex-col space-y-20  mt-10">
-				<div className="flex justify-center">
-					<div className="text-main text-center">
-						<div className="text-5xl font-extrabold">
+			<div className="flex flex-col mt-10 space-y-12 text-main">
+				<div className="flex justify-end space-x-12 font-semibold">
+					<PageLink name="Lights Out" />
+					<PageLink name="Projects" />
+					<PageLink name="Blog" />
+					<PageLink name="Contact" />
+				</div>
+				<div className="flex flex-col items-center space-y-4">
+					<div className="rounded-full w-48 h-48 flex justify-center items-center bg-yellow-200">
+						<img src="/images/avatar/badosz.png" />
+					</div>
+					<div className="text-center">
+						<div className="text-7xl font-extrabold">
 							Bartosz Król
 						</div>
-						<div className="text-2xl flex justify-between">
-							{"I code, most of the time".split(" ").map((e) => (
-								<span>{e}</span>
-							))}
+						<div className="text-3xl">
+							I code, most of the time.
 						</div>
 					</div>
 				</div>
-				<div className="flex justify-center">
-					<div className="flex justify-center space-x-4 border-t-4 border-b-4 py-2 border-light">
-						<Contact link="/github" icon={faGithub} />
-						<Contact
-							link="mailto:m@badosz.com"
-							icon={faEnvelopeSquare}
-						/>
-						<Contact link="/twitter" icon={faTwitter} />
-						<Contact link="/discord" icon={faDiscord} />
-					</div>{" "}
+
+				<div className="flex justify-center ">
+					<Link href="mailto:m@badosz.com">
+						<a className="bg-main text-white px-6 py-4 rounded-full">
+							Contact Me
+						</a>
+					</Link>
 				</div>
-				<div className="flex justify-center">
-					<div className="flex flex-col max-w-xl">
-						<Project
-							name="MilkScript"
-							sub="Programming Language"
-							icon={
-								"/images/projects/milkscript/milkscript_sygnet.svg"
-							}
-							image={"/images/projects/milkscript/screenshot.png"}
-						>
-							A dynamic programming language that compiles into
-							Lua. It provides things that are not normally
-							possible in Lua like default parameters, switches,
-							classes and much more. MilkScript also catches many
-							errors like undeclared identifier. Unlike lua,
-							arrays are zero-based. Currently, this language is
-							still in development.
-						</Project>
+
+				<div className="flex flex-col space-y-4">
+					<Title>Projects</Title>
+					<div className="grid grid-cols-2 gap-12">
+						<div className="">
+							<Project
+								color="bg-blue-200"
+								name="MilkScript"
+								image={
+									"/images/projects/milkscript/screenshot.png"
+								}
+							>
+								A dynamic programming language that compiles
+								into Lua. It provides things that are not
+								normally possible in Lua like default
+								parameters, switches, classes and much more.
+								MilkScript also catches many errors like
+								undeclared identifier. Unlike lua, arrays are
+								zero-based. Currently, this language is still in
+								development.
+							</Project>
+						</div>
+						<div className="mt-48">
+							<Project
+								color="bg-green-200"
+								name="Obrazium"
+								image={
+									"/images/projects/obrazium/dashboard.png"
+								}
+							>
+								An api for image generation and text
+								manipulation. Mostly used in discord bots.
+								Obrazium contains 40+ different endpoints.
+							</Project>
+						</div>
 					</div>
 				</div>
 			</div>

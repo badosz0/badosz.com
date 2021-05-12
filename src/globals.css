@@ -12,3 +12,8 @@ html {
 	width: 0;
 	background: transparent;
 }
+
+body {
+	margin: 0;
+	padding: 0;
+}
