@@ -95,6 +95,23 @@ export function HomePage({ blogPosts }: Props) {
 				<Section refTo={contactRef}>
 					<Contact />
 				</Section>
+
+				<div
+					className="pb-12 flex justify-center text-3xl cursor-pointer"
+					onClick={() => {
+						if (Math.random() <= 0.05) {
+							open("https://www.youtube.com/watch?v=bvim4rsNHkQ");
+						} else {
+							window.scrollTo({
+								top: 0,
+								left: 0,
+								behavior: "smooth",
+							});
+						}
+					}}
+				>
+					🚀
+				</div>
 			</div>
 		</Container>
 	);
