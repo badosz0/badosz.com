@@ -14,8 +14,8 @@ module.exports = {
 			},
 			colors: {
 				main: {
-					DEFAULT: "#232528",
-					hover: "#34383d",
+					DEFAULT: "#23272a",
+					hover: "#36393f",
 				},
 				gray: "#A5AAB0",
 				light: "#E8E8EB",

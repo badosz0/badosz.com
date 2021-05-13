@@ -49,7 +49,7 @@ export function HomePage() {
 
 				<div className="flex justify-center ">
 					<Link href="mailto:m@badosz.com">
-						<a className="bg-main text-white px-6 py-4 rounded-full hover:bg-main-hover transition ease-in-out duration-200">
+						<a className="bg-main text-white px-6 py-4 rounded-2xl hover:bg-main-hover hover:shadow-2xl transition ease-in-out duration-200">
 							Contact Me
 						</a>
 					</Link>
