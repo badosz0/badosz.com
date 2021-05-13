@@ -4,7 +4,6 @@
 
 html {
 	overflow: scroll;
-	@apply bg-milk;
 	@apply font-sans;
 	@apply antialiased;
 }

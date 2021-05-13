@@ -2,8 +2,9 @@ import { Container } from "../ui/Container";
 import { PageLink } from "./PageLink";
 import { Title } from "./Title";
 import { Project } from "./Project";
-import { array_random } from "../../util/array";
 import Link from "next/link";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export function HomePage() {
 	const open = (url: string) => {
@@ -13,11 +14,26 @@ export function HomePage() {
 		}
 	};
 
+	const [mounted, setMounted] = useState(false);
+	const { theme, setTheme } = useTheme();
+
+	useEffect(() => setMounted(true), []);
+
+	if (!mounted) return null;
+
 	return (
 		<Container>
-			<div className="flex flex-col mt-10 space-y-12 text-main">
+			<div className="flex flex-col mt-10 space-y-12 text-main dark:text-milk">
 				<div className="flex justify-end space-x-12 font-semibold">
-					<PageLink name="Lights Off" />
+					<div
+						onClick={() => {
+							setTheme(theme == "light" ? "dark" : "light");
+						}}
+					>
+						<PageLink
+							name={`Lights ${theme == "light" ? "Off" : "On"}`}
+						/>
+					</div>
 					<PageLink name="Projects" />
 					<PageLink name="Resume" />
 					<PageLink name="Blog" />
@@ -49,7 +65,7 @@ export function HomePage() {
 
 				<div className="flex justify-center ">
 					<Link href="mailto:m@badosz.com">
-						<a className="bg-main text-white px-6 py-4 rounded-2xl hover:bg-main-hover hover:shadow-2xl transition ease-in-out duration-200">
+						<a className="bg-main dark:bg-milk text-milk dark:text-main font-bold px-6 py-4 rounded-2xl hover:bg-main-hover hover:shadow-xl transition ease-in-out duration-200">
 							Contact Me
 						</a>
 					</Link>
