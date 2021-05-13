@@ -4,7 +4,7 @@ import { Title } from "./Title";
 import { Project } from "./Project";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { blogPost } from "../../util/blog";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -26,6 +26,9 @@ export function HomePage({ blogPosts }: Props) {
 
 	const [mounted, setMounted] = useState(false);
 	const { theme, setTheme } = useTheme();
+	const projectsRef = useRef(null);
+	const blogRef = useRef(null);
+	const contactRef = useRef(null);
 
 	useEffect(() => setMounted(true), []);
 
@@ -44,10 +47,9 @@ export function HomePage({ blogPosts }: Props) {
 							name={`Lights ${theme == "light" ? "Off" : "On"}`}
 						/>
 					</div>
-					<PageLink name="Projects" />
-					<PageLink name="Resume" />
-					<PageLink name="Blog" />
-					<PageLink name="Contact" />
+					<PageLink name="Projects" scroll={projectsRef} />
+					<PageLink name="Blog" scroll={blogRef} />
+					<PageLink name="Contact" scroll={contactRef} />
 				</div>
 				<div className="flex flex-col items-center space-y-4">
 					<div className="rounded-full w-48 h-48 flex justify-center items-center bg-yellow-200">
@@ -81,7 +83,7 @@ export function HomePage({ blogPosts }: Props) {
 					</Link>
 				</div>
 
-				<div className="flex flex-col space-y-4">
+				<div className="flex flex-col space-y-4" ref={projectsRef}>
 					<Title>Projects</Title>
 					<div className="grid grid-cols-2 gap-12">
 						<div className="flex flex-col space-y-20">
@@ -149,7 +151,7 @@ export function HomePage({ blogPosts }: Props) {
 					</div>
 				</div>
 
-				<div className="flex flex-col space-y-4">
+				<div className="flex flex-col space-y-4" ref={blogRef}>
 					<Title>Blog</Title>
 					<div className="flex flex-row">
 						{blogPosts.map((post) => (
