@@ -5,7 +5,7 @@ export function Projects() {
 	return (
 		<>
 			<Title>Projects</Title>
-			<div className="grid grid-cols-2 gap-12">
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-12">
 				<div className="flex flex-col space-y-20">
 					<Project
 						color="bg-blue-200"
@@ -48,7 +48,7 @@ export function Projects() {
 						in 48 hours for Ludum Dare game jam.
 					</Project>
 				</div>
-				<div className="mt-32 flex flex-col space-y-20">
+				<div className="mt-12 md:mt-32 flex flex-col space-y-20">
 					<Project
 						color="bg-green-200"
 						name="Obrazium"

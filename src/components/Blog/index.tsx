@@ -71,7 +71,7 @@ export function BlogPage({ post }: Props) {
 	return (
 		<>
 			<Container>
-				<div className="flex flex-col mt-24 space-y-4">
+				<div className="flex flex-col my-24 space-y-4">
 					<div className="flex justify-between text-lg text-grayed font-bold">
 						<div className="">
 							{post.date} · {time} min read
@@ -83,7 +83,7 @@ export function BlogPage({ post }: Props) {
 								</a>
 							</Link>
 							<div
-								className="hover:underline"
+								className="hover:underline hidden md:inline"
 								onClick={() => {
 									setTheme(
 										theme == "light" ? "dark" : "light"

@@ -34,7 +34,7 @@ export function HomePage({ blogPosts }: Props) {
 
 	return (
 		<Container>
-			<div className="flex flex-col mt-10 space-y-24 text-main dark:text-milk">
+			<div className="flex flex-col mt-10 space-y-16 md:space-y-20 text-main dark:text-milk">
 				<div className="flex flex-col space-y-12">
 					<div className="flex justify-end space-x-12 font-semibold">
 						<div
@@ -48,9 +48,15 @@ export function HomePage({ blogPosts }: Props) {
 								}`}
 							/>
 						</div>
-						<PageLink name="Projects" scroll={projectsRef} />
-						<PageLink name="Blog" scroll={blogRef} />
-						<PageLink name="Contact" scroll={contactRef} />
+						<span className="hidden sm:inline">
+							<PageLink name="Projects" scroll={projectsRef} />
+						</span>
+						<span className="hidden sm:inline">
+							<PageLink name="Blog" scroll={blogRef} />
+						</span>
+						<span className="hidden sm:inline">
+							<PageLink name="Contact" scroll={contactRef} />
+						</span>
 					</div>
 					<div className="flex flex-col items-center space-y-4">
 						<div className="rounded-full w-48 h-48 flex justify-center items-center bg-yellow-200">
@@ -60,7 +66,7 @@ export function HomePage({ blogPosts }: Props) {
 							/>
 						</div>
 						<div className="text-center">
-							<div className="text-7xl font-extrabold">
+							<div className="text-4xl md:text-7xl font-extrabold">
 								Bartosz Kr
 								<span
 									onClick={() =>
@@ -73,7 +79,7 @@ export function HomePage({ blogPosts }: Props) {
 								</span>
 								l
 							</div>
-							<div className="text-3xl">
+							<div className="text-2xl md:text-3xl">
 								I code, most of the time.
 							</div>
 						</div>
