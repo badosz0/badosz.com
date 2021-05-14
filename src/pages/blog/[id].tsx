@@ -12,8 +12,6 @@ export async function getStaticProps({ params }: { params: any }) {
 	const posts = getPosts();
 	const post = posts.find((p) => p.path == params.id);
 
-	console.log(posts);
-
 	return {
 		props: {
 			post,
