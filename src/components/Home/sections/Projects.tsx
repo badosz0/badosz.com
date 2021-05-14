@@ -11,6 +11,7 @@ export function Projects() {
 						color="bg-blue-200"
 						name="MilkScript"
 						image={"/images/projects/milkscript/screenshot.png"}
+						links={[["Coming Soon", "#"]]}
 					>
 						A dynamic programming language that compiles into Lua.
 						It provides things that are not normally possible in Lua
@@ -24,6 +25,12 @@ export function Projects() {
 						color="bg-pink-200"
 						name="Salio"
 						image={"/images/projects/salio/screenshot.png"}
+						links={[
+							[
+								"Steam",
+								"https://store.steampowered.com/app/875810/Salio/",
+							],
+						]}
 					>
 						A small and minimalistic, but still super hard
 						platformer game about getting a tiny fellow through
@@ -35,6 +42,7 @@ export function Projects() {
 						color="bg-purple-200"
 						name="Curfe"
 						image={"/images/projects/curfe/screenshot.png"}
+						links={[["Itch.io", "https://badosz.itch.io/curfe"]]}
 					>
 						A skill and luck based game about being a currency. Made
 						in 48 hours for Ludum Dare game jam.
@@ -45,6 +53,7 @@ export function Projects() {
 						color="bg-green-200"
 						name="Obrazium"
 						image={"/images/projects/obrazium/dashboard.png"}
+						links={[["Website", "https://obrazium.com"]]}
 					>
 						An api for image generation and text manipulation.
 						Mostly used in discord bots. Obrazium contains 40+
@@ -54,6 +63,12 @@ export function Projects() {
 						color="bg-yellow-300"
 						name="Dear President,"
 						image={"/images/projects/dear-president/screenshot.png"}
+						links={[
+							[
+								"Itch.io",
+								"https://badosz.itch.io/dear-president",
+							],
+						]}
 					>
 						A skill point & click game. Made in 48 hours for Ludum
 						Dare game jam.
