@@ -17,7 +17,7 @@ module.exports = {
 					DEFAULT: "#23272a",
 					hover: "#36393f",
 				},
-				light: "#4f5660",
+				light: "#d4d4d4",
 				grayed: "#8e9297",
 				milk: "#F4F4F8",
 			},

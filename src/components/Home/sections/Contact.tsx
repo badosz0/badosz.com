@@ -19,7 +19,10 @@ interface ContactLinkProps {
 function ContactLink({ link, icon }: ContactLinkProps) {
 	return (
 		<Link href={link}>
-			<a target="_blank">
+			<a
+				target="_blank"
+				className="text-main hover:text-main-hover dark:text-milk dark:hover:text-light transition ease-in-out duration-200"
+			>
 				<FontAwesomeIcon icon={icon} />
 			</a>
 		</Link>

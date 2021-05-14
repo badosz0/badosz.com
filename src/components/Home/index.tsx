@@ -78,7 +78,7 @@ export function HomePage({ blogPosts }: Props) {
 				</div>
 				<div className="flex justify-center ">
 					<Link href="mailto:m@badosz.com">
-						<a className="bg-main dark:bg-milk text-milk dark:text-main font-bold px-6 py-4 rounded-2xl hover:bg-main-hover hover:shadow-xl transition ease-in-out duration-200">
+						<a className="bg-main dark:bg-milk text-milk dark:text-main font-bold px-6 py-4 rounded-2xl hover:bg-main-hover dark:hover:bg-light hover:shadow-xl transition ease-in-out duration-200">
 							Contact Me
 						</a>
 					</Link>
