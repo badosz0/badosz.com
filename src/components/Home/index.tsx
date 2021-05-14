@@ -54,7 +54,10 @@ export function HomePage({ blogPosts }: Props) {
 					</div>
 					<div className="flex flex-col items-center space-y-4">
 						<div className="rounded-full w-48 h-48 flex justify-center items-center bg-yellow-200">
-							<img src="/images/avatar/badosz.png" />
+							<img
+								src="/images/avatar/badosz.png"
+								alt="Bartosz Król's Memoji"
+							/>
 						</div>
 						<div className="text-center">
 							<div className="text-7xl font-extrabold">

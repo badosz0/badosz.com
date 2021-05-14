@@ -15,7 +15,11 @@ export function Project({ name, image, color, children, links }: Props) {
 	return (
 		<div className="flex flex-col space-y-4">
 			<div className={`p-4 ${color}`}>
-				<img src={image} className="rounded-sm" />
+				<img
+					src={image}
+					className="rounded-sm"
+					alt={`${name}'s image`}
+				/>
 			</div>
 			<div className="flex flex-col space-y-2">
 				<div className="text-xl font-semibold">{name}</div>
@@ -27,7 +31,10 @@ export function Project({ name, image, color, children, links }: Props) {
 								link[0]
 							) : (
 								<Link href={link[1]}>
-									<a target={link[1] == "#" ? "" : "_blank"}>
+									<a
+										target={link[1] == "#" ? "" : "_blank"}
+										rel="noreferrer"
+									>
 										{link[0]}{" "}
 										<FontAwesomeIcon
 											icon={faExternalLinkAlt}
