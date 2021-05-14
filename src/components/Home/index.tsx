@@ -99,7 +99,7 @@ export function HomePage({ blogPosts }: Props) {
 				<div
 					className="pb-12 flex justify-center text-3xl cursor-pointer"
 					onClick={() => {
-						if (Math.random() <= 0.05) {
+						if (Math.random() <= 0.01) {
 							open("https://www.youtube.com/watch?v=bvim4rsNHkQ");
 						} else {
 							window.scrollTo({

@@ -2,6 +2,7 @@ import { Title } from "../Title";
 import { blogPost } from "../../../util/blog";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 interface Props {
 	blogPosts: blogPost[];
@@ -13,17 +14,17 @@ export function Blog({ blogPosts }: Props) {
 			<Title>Blog</Title>
 			<div className="flex">
 				{blogPosts.map((post) => (
-					<div className="flex flex-col">
-						<div className="text-lg font-semibold flex space-x-4">
-							<div>{post.name}</div>
-							<div className="flex justify-center items-center">
-								<FontAwesomeIcon icon={faExternalLinkAlt} />
+					<Link href={`/blog/${post.path}`}>
+						<a className="flex flex-col">
+							<div className="text-lg font-semibold flex space-x-4">
+								<div>{post.name}</div>
+								<div className="flex justify-center items-center">
+									<FontAwesomeIcon icon={faExternalLinkAlt} />
+								</div>
 							</div>
-						</div>
-						<div className="text-light dark:text-grayed">
-							{post.date}
-						</div>
-					</div>
+							<div className="text-grayed">{post.date}</div>
+						</a>
+					</Link>
 				))}
 			</div>
 		</>
