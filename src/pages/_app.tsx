@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
-		<ThemeProvider attribute="class" defaultTheme="light">
+		<ThemeProvider attribute="class" defaultTheme="system">
 			<GlobalStyles />
 			<Component {...pageProps} />
 		</ThemeProvider>
