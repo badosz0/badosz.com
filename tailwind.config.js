@@ -10,16 +10,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ["Poppins", ...defaultTheme.fontFamily.sans],
-			},
-			colors: {
-				main: {
-					DEFAULT: "#23272a",
-					hover: "#36393f",
-				},
-				light: "#d4d4d4",
-				grayed: "#8e9297",
-				milk: "#F4F4F8",
+				sans: ["Inter", ...defaultTheme.fontFamily.sans],
 			},
 		},
 	},

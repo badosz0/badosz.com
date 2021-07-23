@@ -1,27 +1,20 @@
-import { AppProps } from "next/app";
-import "~/globals.css";
-import { ThemeProvider } from "next-themes";
-import { createGlobalStyle } from "styled-components";
-import { config, dom } from "@fortawesome/fontawesome-svg-core";
+import { config } from "@fortawesome/fontawesome-svg-core";
 import { DefaultSeo } from "next-seo";
+import { AppProps } from "next/app";
 import Head from "next/head";
+import "@web/globals.css";
 
 config.autoAddCss = false;
-const GlobalStyles = createGlobalStyle`
-    ${dom.css()}
-`;
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
-		<ThemeProvider attribute="class" defaultTheme="system">
-			<GlobalStyles />
+		<>
 			<Head>
 				<link
-					href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900"
+					href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap"
 					rel="stylesheet"
-					media="print"
 				/>
-				<meta name="theme-color" content="#fde68a" />
+				<meta name="theme-color" content="#ffffff" />
 				<meta
 					property="og:image"
 					content="/images/avatar/badosz.png"
@@ -51,6 +44,6 @@ export default function App({ Component, pageProps }: AppProps) {
 				}}
 			/>
 			<Component {...pageProps} />
-		</ThemeProvider>
+		</>
 	);
 }

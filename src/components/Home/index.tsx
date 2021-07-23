@@ -1,125 +1,111 @@
-import { Container } from "../ui/Container";
-import { PageLink } from "./PageLink";
-import { Title } from "./Title";
-import { Section } from "./Section";
-import { Projects } from "./sections/Projects";
-import { Blog } from "./sections/Blog";
-import { Contact } from "./sections/Contact";
+import { Container } from "@web/components/ui/Container";
 import Link from "next/link";
-import { useTheme } from "next-themes";
-import { useEffect, useRef, useState } from "react";
-import { blogPost } from "../../util/blog";
 
-interface Props {
-	blogPosts: blogPost[];
+interface ProjectProps {
+	name: string;
+	url: string;
+	description: string;
 }
 
-export function HomePage({ blogPosts }: Props) {
-	const open = (url: string) => {
-		const newWindow = window.open(url, "_blank", "noopener,noreferrer");
-		if (newWindow) {
-			newWindow.opener = null;
-		}
-	};
+function Project({ name, url, description }: ProjectProps) {
+	return (
+		<div className="flex flex-col items-start text-md">
+			<Link href={url}>
+				<a className="relative" target={url === "#" ? "" : "_blank"}>
+					<div className="px-1 py-0.5 bg-purple-200 bg-opacity-60 hover:bg-opacity-75 cursor-pointer text-md rounded-md">
+						{name}
+					</div>
+				</a>
+			</Link>
+			<div className="text-md">{description}</div>
+		</div>
+	);
+}
 
-	const [mounted, setMounted] = useState(false);
-	const { theme, setTheme } = useTheme();
-	const projectsRef = useRef(null);
-	const blogRef = useRef(null);
-	const contactRef = useRef(null);
+interface ContactLinkProps {
+	name: string;
+	url: string;
+}
 
-	useEffect(() => setMounted(true), []);
+function ContactLink({ name, url }: ContactLinkProps) {
+	return (
+		<Link href={url}>
+			<a className="text-purple-500 hover:text-purple-600">{name}</a>
+		</Link>
+	);
+}
 
-	if (!mounted) return null;
-
+export function HomePage() {
 	return (
 		<Container>
-			<div className="flex flex-col mt-10 space-y-16 md:space-y-20 text-main dark:text-milk">
-				<div className="flex flex-col space-y-12">
-					<div className="flex justify-end space-x-12 font-semibold">
-						<div
-							onClick={() => {
-								setTheme(theme == "light" ? "dark" : "light");
-							}}
-						>
-							<PageLink
-								name={`Lights ${
-									theme == "light" ? "Off" : "On"
-								}`}
-							/>
-						</div>
-						<span className="hidden sm:inline">
-							<PageLink name="Projects" scroll={projectsRef} />
-						</span>
-						<span className="hidden sm:inline">
-							<PageLink name="Blog" scroll={blogRef} />
-						</span>
-						<span className="hidden sm:inline">
-							<PageLink name="Contact" scroll={contactRef} />
-						</span>
+			<div className="my-16 flex flex-col space-y-16">
+				<div className="flex justify-between items-center">
+					<div>
+						<div className="text-3xl font-bold">Bartosz Król</div>
+						<div className="text-lg">Software engineer</div>
 					</div>
-					<div className="flex flex-col items-center space-y-4">
-						<div className="rounded-full w-48 h-48 flex justify-center items-center bg-yellow-200">
-							<img
-								src="/images/avatar/badosz.png"
-								alt="Bartosz Król's Memoji"
-							/>
-						</div>
-						<div className="text-center">
-							<div className="text-4xl md:text-7xl font-extrabold">
-								Bartosz Kr
-								<span
-									onClick={() =>
-										open(
-											"https://www.youtube.com/watch?v=b0q5PR1xpA0"
-										)
-									}
-								>
-									ó
-								</span>
-								l
-							</div>
-							<div className="text-2xl md:text-3xl">
-								I code, most of the time.
-							</div>
-						</div>
+					<div>
+						<img
+							src="/images/qr/qrcode.png"
+							className="w-14 h-14"
+						/>
 					</div>
 				</div>
-				<div className="flex justify-center ">
-					<Link href="mailto:m@badosz.com">
-						<a className="bg-main dark:bg-milk text-milk dark:text-main font-bold px-6 py-4 rounded-2xl hover:bg-main-hover dark:hover:bg-light hover:shadow-xl transition ease-in-out duration-200">
-							Contact Me
-						</a>
-					</Link>
+				<div>
+					<div className="text-xl font-medium">Contact me</div>
+					<div className="space-y-4 mt-4">
+						You are most likely to reach me through{" "}
+						<ContactLink name="Twitter" url="/twitter" /> or on my{" "}
+						<ContactLink name="Discord" url="/discord" /> server.
+						All of my open source projects are on{" "}
+						<ContactLink name="Github" url="/twitter" />. You can
+						also send me an email at{" "}
+						<span className="text-purple-500">
+							contact@<i>thisdomain.com</i>
+						</span>
+					</div>
 				</div>
-
-				<Section refTo={projectsRef}>
-					<Projects />
-				</Section>
-
-				<Section refTo={blogRef}>
-					<Blog blogPosts={blogPosts} />
-				</Section>
-
-				<Section refTo={contactRef}>
-					<Contact />
-				</Section>
-
-				<div
-					className="pb-12 flex justify-center text-3xl cursor-pointer"
-					onClick={() => {
-						if (Math.random() <= 0.01) {
-							open("https://www.youtube.com/watch?v=bvim4rsNHkQ");
-						} else {
-							window.scrollTo({
-								top: 0,
-								left: 0,
-								behavior: "smooth",
-							});
-						}
-					}}
-				>
-					🚀
+				<div>
+					<div className="text-xl font-medium">
+						Currently Working On
+					</div>
+					<div className="space-y-4 mt-4">
+						<Project
+							name="rumibase"
+							url="#"
+							description="Keep everything in one place. Make it simple. Coming Soon."
+						/>
+						<Project
+							name="MilkScript"
+							url="#"
+							description="A dynamic programming language that compiles into Lua. Currently, this language is still in development."
+						/>
+						<Project
+							name="Dank Memer"
+							url="https://dankmemer.lol/"
+							description="A feature-rich bot with the original twist. One of the largest bots on Discord with over 20m users."
+						/>
+					</div>
+				</div>
+				<div>
+					<div className="text-xl font-medium">Past Work</div>
+					<div className="space-y-4 mt-4">
+						<Project
+							name="Salio"
+							url="https://store.steampowered.com/app/875810/Salio/"
+							description="A small and minimalistic, but still super hard platformer game about getting a tiny fellow through numerous rooms filled with various obstacles."
+						/>
+						<Project
+							name="Dear President,"
+							url="https://badosz.itch.io/dear-president"
+							description="A skill point & click game. Made in 48 hours for Ludum Dare game jam."
+						/>
+						<Project
+							name="Curfe"
+							url="https://badosz.itch.io/curfe"
+							description="A skill and luck based game about being a currency. Made in 48 hours for Ludum Dare game jam."
+						/>
+					</div>
 				</div>
 			</div>
 		</Container>
