@@ -30,7 +30,12 @@ interface ContactLinkProps {
 function ContactLink({ name, url }: ContactLinkProps) {
 	return (
 		<Link href={url}>
-			<a className="text-purple-500 hover:text-purple-600">{name}</a>
+			<a
+				target="_blank"
+				className="text-purple-500 hover:text-purple-600"
+			>
+				{name}
+			</a>
 		</Link>
 	);
 }
@@ -58,7 +63,7 @@ export function HomePage() {
 						<ContactLink name="Twitter" url="/twitter" /> or on my{" "}
 						<ContactLink name="Discord" url="/discord" /> server.
 						All of my open source projects are on{" "}
-						<ContactLink name="Github" url="/twitter" />. You can
+						<ContactLink name="Github" url="/github" />. You can
 						also send me an email at{" "}
 						<span className="text-purple-500">
 							contact@<i>thisdomain.com</i>
