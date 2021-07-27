@@ -11,7 +11,11 @@ function Project({ name, url, description }: ProjectProps) {
 	return (
 		<div className="flex flex-col items-start text-md">
 			<Link href={url}>
-				<a className="relative" target={url === "#" ? "" : "_blank"}>
+				<a
+					className="relative"
+					target={url === "#" ? "" : "_blank"}
+					rel="noopener"
+				>
 					<div className="px-1 py-0.5 bg-purple-200 bg-opacity-60 hover:bg-opacity-75 cursor-pointer text-md rounded-md">
 						{name}
 					</div>
@@ -32,7 +36,7 @@ function ContactLink({ name, url }: ContactLinkProps) {
 		<Link href={url}>
 			<a
 				target="_blank"
-				className="text-purple-500 hover:text-purple-600"
+				className="text-purple-600 hover:text-purple-700"
 			>
 				{name}
 			</a>
@@ -43,7 +47,7 @@ function ContactLink({ name, url }: ContactLinkProps) {
 export function HomePage() {
 	return (
 		<Container>
-			<div className="my-16 flex flex-col space-y-16">
+			<main className="my-16 flex flex-col space-y-16">
 				<div className="flex justify-between items-center">
 					<div>
 						<div className="text-3xl font-bold">Bartosz Król</div>
@@ -53,6 +57,9 @@ export function HomePage() {
 						<img
 							src="/images/qr/qrcode.png"
 							className="w-14 h-14"
+							width={56}
+							height={56}
+							alt="qr code"
 						/>
 					</div>
 				</div>
@@ -65,7 +72,7 @@ export function HomePage() {
 						All of my open source projects are on{" "}
 						<ContactLink name="Github" url="/github" />. You can
 						also send me an email at{" "}
-						<span className="text-purple-500">
+						<span className="text-purple-600">
 							contact@<i>thisdomain.com</i>
 						</span>
 					</div>
@@ -112,7 +119,7 @@ export function HomePage() {
 						/>
 					</div>
 				</div>
-			</div>
+			</main>
 		</Container>
 	);
 }
