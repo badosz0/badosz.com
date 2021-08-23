@@ -90,7 +90,7 @@ export function HomePage() {
 						<Project
 							name="MilkScript"
 							url="#"
-							description="A dynamic programming language that compiles into Lua. Currently, this language is still in development."
+							description="A dynamic programming language. Currently still in development."
 						/>
 						<Project
 							name="Dank Memer"
