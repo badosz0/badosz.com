@@ -73,7 +73,15 @@ export function HomePage() {
 						<ContactLink name="Github" url="/github" />. You can
 						also send me an email at{" "}
 						<span className="text-purple-600">
-							contact@<i>thisdomain.com</i>
+							contact@
+							<span className="hidden">I</span>
+							<span className="relative">ba</span>
+							<span className="hidden">love</span>
+							<span className="relative">do</span>
+							<span className="hidden">bots</span>
+							<span className="relative">sz</span>
+							<span className="hidden">!</span>
+							<span className="relative">.com</span>
 						</span>
 					</div>
 				</div>
