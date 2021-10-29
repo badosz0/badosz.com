@@ -83,6 +83,8 @@ export function HomePage() {
 							<span className="hidden">!</span>
 							<span className="relative">.com</span>
 						</span>
+						. If you like my work, you can buy me a coffee on{" "}
+						<ContactLink name="Ko-fi" url="/kofi" />.
 					</div>
 				</div>
 				<div>
@@ -103,7 +105,7 @@ export function HomePage() {
 						<Project
 							name="Dank Memer"
 							url="https://dankmemer.lol/"
-							description="A feature-rich bot with the original twist. One of the largest bots on Discord with over 20m users."
+							description="A feature-rich bot with the original twist. One of the largest bots on Discord with over 25m users."
 						/>
 					</div>
 				</div>
