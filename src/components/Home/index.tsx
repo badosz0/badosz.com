@@ -83,8 +83,7 @@ export function HomePage() {
 							<span className="hidden">!</span>
 							<span className="relative">.com</span>
 						</span>
-						. If you like my work, you can buy me a coffee on{" "}
-						<ContactLink name="Ko-fi" url="/kofi" />.
+						.
 					</div>
 				</div>
 				<div>
@@ -93,9 +92,14 @@ export function HomePage() {
 					</div>
 					<div className="space-y-4 mt-4">
 						<Project
-							name="rumibase"
-							url="#"
-							description="Keep everything in one place. Make it simple. Coming Soon."
+							name="Dank Memer"
+							url="https://dankmemer.lol/"
+							description="A feature-rich bot with the original twist. One of the largest bots on Discord with over 25 million users and 8 million servers."
+						/>
+						<Project
+							name="dankmemer.lol"
+							url="https://dankmemer.lol/"
+							description="A website for Dank Memer Discord bot with a feature-filled feedback page."
 						/>
 						<Project
 							name="MilkScript"
@@ -103,9 +107,9 @@ export function HomePage() {
 							description="A dynamic programming language. Currently still in development."
 						/>
 						<Project
-							name="Dank Memer"
-							url="https://dankmemer.lol/"
-							description="A feature-rich bot with the original twist. One of the largest bots on Discord with over 25m users."
+							name="rumibase"
+							url="#"
+							description="Coming Soon."
 						/>
 					</div>
 				</div>
