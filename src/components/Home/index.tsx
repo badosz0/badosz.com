@@ -98,8 +98,8 @@ export function HomePage() {
 						/>
 						<Project
 							name="dankmemer.lol"
-							url="https://dankmemer.lol/"
-							description="A website for Dank Memer Discord bot with a feature-filled feedback page."
+							url="https://dankmemer.lol/community"
+							description="A website for Dank Memer Discord bot with a feature-filled community page."
 						/>
 						<Project
 							name="MilkScript"
