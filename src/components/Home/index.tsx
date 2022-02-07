@@ -106,11 +106,6 @@ export function HomePage() {
 							url="#"
 							description="A dynamic programming language. Currently still in development."
 						/>
-						<Project
-							name="rumibase"
-							url="#"
-							description="Coming Soon."
-						/>
 					</div>
 				</div>
 				<div>
