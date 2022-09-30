@@ -28,7 +28,7 @@ export function HomePage(): JSX.Element {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <Project
             name='BloxLink'
-            description='A feature-rich bot with the original twist. One of the largest bots on Discord with over 30 million users and 9 million servers.'
+            description='A free, seamless Roblox integration and management service for Discord.'
             date='2022 - now'
             role='Full-Stack'
             image='/images/projects/bloxlink.png'
