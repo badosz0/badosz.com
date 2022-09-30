@@ -12,18 +12,8 @@ module.exports = {
 				permanent: true,
 			},
 			{
-				source: "/snap",
-				destination: "https://www.snapchat.com/add/bwkxx",
-				permanent: true,
-			},
-			{
-				source: "/snapchat",
-				destination: "https://www.snapchat.com/add/bwkxx",
-				permanent: true,
-			},
-			{
 				source: "/twitter",
-				destination: "https://twitter.com/badosz_",
+				destination: "https://twitter.com/badoosz",
 				permanent: true,
 			},
 			{

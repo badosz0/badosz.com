@@ -1,3 +1,2 @@
-import { HomePage } from "@web/components/Home";
 
-export default HomePage;
+export { HomePage as default } from '@web/components/Home';
