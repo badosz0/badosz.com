@@ -13,7 +13,7 @@ export function Link({ children, href, underline = false }: Props): JSX.Element 
     <NextLink href={href}>
       <a
         target="_blank"
-        className={clsx(underline && 'underline')}
+        className={clsx('text-blue-500 font-semibold', underline && 'underline')}
       >
         {children}
       </a>

@@ -26,7 +26,7 @@ export function HomePage(): JSX.Element {
           </div>
         </div>
         <div className='flex flex-col space-y-2'>
-          <div className='text-lg font-semibold border-b-2 pb-2 mb-2'>
+          <div className='text-lg font-semibold border-b pb-2 mb-2'>
             Work
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
