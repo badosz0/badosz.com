@@ -3,6 +3,7 @@ import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import '@web/globals.css';
+import { SWRConfig } from 'swr';
 
 config.autoAddCss = false;
 
@@ -39,7 +40,14 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
           description: 'I make stuff',
         }}
       />
-      <Component {...pageProps} />
+      <SWRConfig
+        value={{
+          fetcher: (url) => fetch(url)
+            .then((r) => r.json()),
+        }}
+      >
+        <Component {...pageProps} />
+      </SWRConfig>
     </>
   );
 }
