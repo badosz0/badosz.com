@@ -3,5 +3,5 @@ function pad2(number: number): string {
 }
 
 export function formatMilliseconds(milliseconds: number): string {
-  return `${pad2(Number((milliseconds / 1000 / 60).toFixed(0)))}:${pad2(Number((milliseconds / 1000 % 60).toFixed(0)))}`;
+  return `${pad2(Number(Math.floor(milliseconds / 1000 / 60).toFixed(0)))}:${pad2(Number((milliseconds / 1000 % 60).toFixed(0)))}`;
 }
