@@ -39,30 +39,6 @@ export default function HomeProjects(): JSX.Element {
           role='Founder'
           href='https://github.com/badosz0/milkscript'
         />
-        <Project
-          name='Curfe'
-          description='A skill and luck based game about being a currency. Made in 48 hours for Ludum Dare game jam.'
-          image='/images/projects/curfe.png'
-          date='2019'
-          role=' Developer'
-          href='https://badosz.itch.io/curfe'
-        />
-        <Project
-          name='Dear President,'
-          description='A skill point & click game. Made in 48 hours for Ludum Dare game jam.'
-          image='/images/projects/dear-president.png'
-          date='2019'
-          role=' Developer'
-          href='https://badosz.itch.io/dear-president'
-        />
-        <Project
-          name='Salio'
-          description='A small and minimalistic, but still super hard platformer game about getting a tiny fellow through numerous rooms filled with various obstacles.'
-          image='/images/projects/salio.png'
-          date='2018 - 2019'
-          role='Developer'
-          href='https://store.steampowered.com/app/875810/Salio/'
-        />
       </div>
     </div>
   );
