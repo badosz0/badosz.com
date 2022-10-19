@@ -11,8 +11,8 @@ export default function HomeNowPlaying(): JSX.Element {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setProgress(progress + 2);
-    }, 2);
+      setProgress(progress + 20);
+    }, 20);
 
     return () => clearInterval(interval);
   }, [ progress ]);
