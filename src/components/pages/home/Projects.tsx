@@ -8,7 +8,7 @@ export default function HomeProjects(): JSX.Element {
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <Project
-          name='BloxLink'
+          name='Bloxlink'
           description='A free, seamless Roblox integration and management service for Discord.'
           date='2022 - now'
           role='Full-Stack'
