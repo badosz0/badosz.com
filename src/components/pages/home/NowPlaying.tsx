@@ -28,12 +28,11 @@ export default function HomeNowPlaying(): JSX.Element {
   }
 
   return (
-
     <div className='flex flex-col space-y-2'>
       <div className='text-lg font-semibold border-b pb-2 mb-2'>
         Now Playing
       </div>
-      <div className='flex space-x-2'>
+      <div className='flex space-x-4'>
         <div className='w-16'>
           <img
             src={nowPlaying.albumImage}
