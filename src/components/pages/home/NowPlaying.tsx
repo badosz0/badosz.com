@@ -33,7 +33,7 @@ export default function HomeNowPlaying(): JSX.Element {
         Now Playing
       </div>
       <div className='flex space-x-4'>
-        <div className='w-16'>
+        <div className='w-14'>
           <img
             src={nowPlaying.albumImage}
             className="object-cover rounded-md aspect-square"

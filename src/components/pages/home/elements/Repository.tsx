@@ -24,8 +24,8 @@ export default function Repository({ url }: Props): JSX.Element {
           <GithubIcon className="h-8 w-8" />
         </div>
         <div className='flex flex-col -space-y-1 w-full'>
-          <div className='font-semibold flex justify-between'>
-            <span>{data.name}</span>
+          <div className='flex justify-between'>
+            <span className='font-semibold'>{data.name}</span>
             <span className='text-gray-400'>★ {data.stargazers_count}</span>
           </div>
           <div className='text-gray-600'>{data.description}</div>
