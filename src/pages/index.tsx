@@ -41,15 +41,6 @@ export default function HomePage(): JSX.Element {
             layout
             initial={{ scale: 1, opacity: 0, y: 5 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.75, type: 'spring' }}
-          >
-            <HomeNowPlaying/>
-          </motion.div>
-
-          <motion.div
-            layout
-            initial={{ scale: 1, opacity: 0, y: 5 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.75, type: 'spring' }}
           >
             <HomeWork/>
@@ -62,6 +53,15 @@ export default function HomePage(): JSX.Element {
             transition={{ delay: 0.6, duration: 0.75, type: 'spring' }}
           >
             <HomeProjects/>
+          </motion.div>
+
+          <motion.div
+            layout
+            initial={{ scale: 1, opacity: 0, y: 5 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.75, type: 'spring' }}
+          >
+            <HomeNowPlaying/>
           </motion.div>
         </main>
       </AnimateSharedLayout>
