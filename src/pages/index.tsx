@@ -1,21 +1,17 @@
-import { AnimateSharedLayout, motion } from 'framer-motion';
+import { AnimateSharedLayout } from 'framer-motion';
 import HomeNowPlaying from '../components/pages/home/NowPlaying';
 import HomeProjects from '../components/pages/home/Projects';
 import HomeWork from '../components/pages/home/Work';
 import { Container } from '../components/ui/Container';
 import { Link } from '../components/ui/Link';
+import { Offset } from '../components/ui/Offset';
 
 export default function HomePage(): JSX.Element {
   return (
     <Container>
       <AnimateSharedLayout>
         <main className="my-16 flex flex-col space-y-16">
-          <motion.div
-            layout
-            initial={{ scale: 1, opacity: 0, y: 5 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            transition={{ delay: 0, duration: 0.75, type: 'spring' }}
-          >
+          <Offset by={0}>
             <div className="flex justify-between items-center">
               <div>
                 <div className="text-3xl font-bold">Bartosz Król</div>
@@ -35,34 +31,19 @@ export default function HomePage(): JSX.Element {
                 />
               </div>
             </div>
-          </motion.div>
+          </Offset>
 
-          <motion.div
-            layout
-            initial={{ scale: 1, opacity: 0, y: 5 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.75, type: 'spring' }}
-          >
+          <Offset by={0.2}>
             <HomeWork/>
-          </motion.div>
+          </Offset>
 
-          <motion.div
-            layout
-            initial={{ scale: 1, opacity: 0, y: 5 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.75, type: 'spring' }}
-          >
+          <Offset by={0.4}>
             <HomeProjects/>
-          </motion.div>
+          </Offset>
 
-          <motion.div
-            layout
-            initial={{ scale: 1, opacity: 0, y: 5 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.75, type: 'spring' }}
-          >
+          <Offset by={0.6}>
             <HomeNowPlaying/>
-          </motion.div>
+          </Offset>
         </main>
       </AnimateSharedLayout>
     </Container>

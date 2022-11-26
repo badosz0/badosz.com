@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 
-interface Props {
+type Props = {
 	children: ReactNode;
-}
+};
 
 export function Container({ children }: Props): JSX.Element {
   return (

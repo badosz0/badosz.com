@@ -5,8 +5,15 @@ type Props = {
   url: `${string}/${string}`;
 };
 
+type RepoData = {
+  html_url: string;
+  name: string;
+  stargazers_count: number;
+  description: string;
+};
+
 export default function Repository({ url }: Props): JSX.Element {
-  const [ data, setData ] = useState<any>(null); // TODO: type
+  const [ data, setData ] = useState<RepoData | null>(null);
 
   useEffect(() => {
     fetch(`https://api.github.com/repos/${url}`)
