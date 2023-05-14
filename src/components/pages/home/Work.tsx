@@ -37,7 +37,7 @@ export default function HomeWork(): JSX.Element {
           image='/images/projects/milkscript.png'
           date='2020 - now'
           role='Founder'
-          href='https://github.com/badosz0/milkscript'
+          href='#'
         />
       </div>
     </div>
