@@ -9,7 +9,7 @@ export default function HomeWork(): JSX.Element {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <Project
           name='GameGator'
-          description='A consumer review and price comparison website, specialising in gaming products.'
+          description='A consumer review & price comparison website, specialising in gaming products.'
           date='2023 - now'
           role='Full-Stack'
           image='/images/projects/gamegator.png'
