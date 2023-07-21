@@ -8,6 +8,14 @@ export default function HomeWork(): JSX.Element {
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <Project
+          name='GameGator'
+          description='A consumer review and price comparison website, specialising in gaming products.'
+          date='2023 - now'
+          role='Full-Stack'
+          image='/images/projects/gamegator.png'
+          href='#'
+        />
+        <Project
           name='Bloxlink'
           description='A free, seamless Roblox integration and management service for Discord.'
           date='2022 - now'
