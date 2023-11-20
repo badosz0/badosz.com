@@ -31,6 +31,7 @@ export const metadata: Metadata = {
       type: 'image/png',
     },
   ],
+  themeColor: '#FFFFFF',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
