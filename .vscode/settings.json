@@ -1,12 +1,17 @@
 {
   "editor.detectIndentation": false,
-  "editor.tabSize": 2,   
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
+  "editor.tabSize": 2,
   "typescript.implementationsCodeLens.enabled": true,
   "search.exclude": {
     "**/node_modules": true,
-    "**/.next": true,
+    "**/.next": true
   },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

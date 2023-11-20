@@ -1,17 +1,18 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-	mode: "jit",
-	content: [
-		"./src/pages/**/*.{js,ts,jsx,tsx}",
-		"./src/components/**/*.{js,ts,jsx,tsx}",
-	],
-	theme: {
-		extend: {
-			fontFamily: {
-				sans: ["Inter", ...defaultTheme.fontFamily.sans],
-			},
-		},
-	},
-	plugins: [],
+  mode: 'jit',
+  content: ['./src/app/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        background: '#1E1E1E',
+        card: '#262626',
+        detail: '#333333',
+        link: '#18A0FB',
+        secondary: '#8D8D8D',
+      },
+    },
+  },
+  plugins: [],
 };
