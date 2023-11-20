@@ -30,7 +30,7 @@ export function Project({ url, emoji, name, description }: Props) {
       whileTap={{ scale: 0.99 }}
       layout
     >
-      <img src={`/images/emojis/${emoji}.png`} className="h-12 w-12" />
+      <img src={`/images/emojis/${emoji}.png`} className="h-12 w-12" alt={name} />
       <div className="flex-1">
         <div className="flex  items-center gap-2">
           <p className="text-lg font-bold text-white">{name}</p>

@@ -10,6 +10,7 @@ export function Emoji(): JSX.Element {
 
   return (
     <motion.img
+      alt="emoji"
       src={`/images/emojis/${EMOJIS[emoji]}.png`}
       className="w-12 h-12 cursor-pointer"
       onClick={() => setEmoji((emoji + 1) % EMOJIS.length)}

@@ -19,7 +19,7 @@ export function Work({ name, description, href, image, time }: Props) {
       rel="noopener noreferrer"
       whileTap={{ scale: 0.99 }}
     >
-      <img src={image} className="h-24 rounded-md aspect-video object-cover" />
+      <img src={image} className="h-24 rounded-md aspect-video object-cover" alt={name} />
       <div className="flex-1">
         <div className="flex  items-center gap-2">
           <p className="text-lg font-bold text-white">{name}</p>

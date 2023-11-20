@@ -31,10 +31,6 @@ export const metadata: Metadata = {
       type: 'image/png',
     },
   ],
-  robots: {
-    index: false,
-    follow: false,
-  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
