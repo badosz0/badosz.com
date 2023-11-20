@@ -13,7 +13,7 @@ type Props = {
 export function Work({ name, description, href, image, time }: Props) {
   return (
     <motion.a
-      className="bg-card rounded-md p-4 flex-col sm:flex-row flex gap-4"
+      className="bg-card rounded-[16px] p-4 flex-col sm:flex-row flex gap-4"
       href={href}
       target="_blank"
       rel="noopener noreferrer"
