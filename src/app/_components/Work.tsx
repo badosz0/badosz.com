@@ -13,13 +13,13 @@ type Props = {
 export function Work({ name, description, href, image, time }: Props) {
   return (
     <motion.a
-      className="bg-card rounded-md p-4 flex gap-4"
+      className="bg-card rounded-md p-4 flex-col sm:flex-row flex gap-4"
       href={href}
       target="_blank"
       rel="noopener noreferrer"
       whileTap={{ scale: 0.99 }}
     >
-      <img src={image} className="h-24 rounded-md aspect-video" />
+      <img src={image} className="h-24 rounded-md aspect-video object-cover" />
       <div className="flex-1">
         <div className="flex  items-center gap-2">
           <p className="text-lg font-bold text-white">{name}</p>
