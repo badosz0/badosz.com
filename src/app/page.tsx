@@ -4,7 +4,7 @@ import { Work } from './_components/Work';
 
 export default function Page(): JSX.Element {
   return (
-    <div className="mx-auto max-w-3xl p p-16 flex flex-col gap-32">
+    <div className="mx-auto max-w-3xl p-8 sm:p-16 flex flex-col gap-32">
       <div className="flex justify-between items-center w-full">
         <div className="flex flex-col">
           <p className="text-white font-bold text-3xl">Bartosz Król</p>
