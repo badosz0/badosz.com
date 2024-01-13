@@ -34,7 +34,7 @@ export default function Page(): JSX.Element {
         <Work
           name="GameGator"
           description="A consumer review & price comparison website, specialising in gaming products."
-          href="https://main.gamegator.net/"
+          href="https://gamegator.net/"
           image="/images/work/gamegator.png"
           time="2023 - Present"
         />
