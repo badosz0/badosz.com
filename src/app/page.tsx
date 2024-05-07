@@ -39,18 +39,18 @@ export default function Page(): JSX.Element {
           time="2023 - Present"
         />
         <Work
-          name="Bloxlink"
-          description="A free, seamless Roblox integration and management service for Discord."
-          href="https://blox.link/"
-          image="/images/work/bloxlink.png"
-          time="2022 - Present"
-        />
-        <Work
           name="Dank Memer"
           description="A feature-rich bot with the original twist. One of the largest bots on Discord with over 30 million users and 9 million servers."
           href="https://dankmemer.lol/"
           image="/images/work/dank-memer-bot.png"
           time="2021 - Present"
+        />
+        <Work
+          name="Bloxlink"
+          description="A free, seamless Roblox integration and management service for Discord."
+          href="https://blox.link/"
+          image="/images/work/bloxlink.png"
+          time="2022 - 2024"
         />
       </div>
       <div className="flex flex-col gap-4">
