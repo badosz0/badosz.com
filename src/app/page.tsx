@@ -51,6 +51,7 @@ export default function Page(): JSX.Element {
           href="https://blox.link/"
           image="/images/work/bloxlink.png"
           time="2022 - 2024"
+          extra="Acquired by Roblox"
         />
       </div>
       <div className="flex flex-col gap-4">

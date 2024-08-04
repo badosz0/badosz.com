@@ -8,9 +8,10 @@ type Props = {
   href: string;
   image: string;
   time: string;
+  extra?: string;
 };
 
-export function Work({ name, description, href, image, time }: Props) {
+export function Work({ name, description, href, image, time, extra }: Props) {
   return (
     <motion.a
       className="bg-card rounded-[16px] p-4 flex-col sm:flex-row flex gap-4"
@@ -24,6 +25,7 @@ export function Work({ name, description, href, image, time }: Props) {
         <div className="flex  items-center gap-2">
           <p className="text-lg font-bold text-white">{name}</p>
           <p className="text-xs text-secondary font-semibold bg-detail rounded-md px-2 py-0.5">{time}</p>
+          {extra && <p className="text-xs text-secondary font-semibold bg-detail rounded-md px-2 py-0.5">{extra}</p>}
         </div>
         <p className="text-sm leading-1 text-secondary">{description}</p>
       </div>
