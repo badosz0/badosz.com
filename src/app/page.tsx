@@ -25,6 +25,13 @@ export default function Page(): JSX.Element {
       <div className="flex flex-col gap-4">
         <p className="text-white font-bold text-xl">Work</p>
         <Work
+          name="Brickver"
+          description="A platform where you can showcase your LEGO collection, discover new sets, and connect with other LEGO fans!"
+          href="https://brickver.com/"
+          image="/images/work/brickver.png"
+          time="2024 - Present"
+        />
+        <Work
           name="Slice"
           description="An innovative platform revolutionizing internet browsing by enabling users to monetize their browser."
           href="https://addslice.com/"
