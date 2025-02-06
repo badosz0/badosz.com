@@ -22,7 +22,7 @@ export function Project({ name, description, href, image, role }: Props) {
         alt={name}
       />
       <div className="flex flex-col gap-4">
-        <div className="flex gap-2 sm:flex-row flex-col">
+        <div className="flex gap-4 sm:flex-row flex-col">
           <p className="text-sm font-bold text-white">{name}</p>
           <p className="text-sm text-tertiary">{role}</p>
         </div>

@@ -9,8 +9,10 @@
     "lint": "biome check --write --unsafe"
   },
   "dependencies": {
+    "amerkit": "^0.10.1",
     "biome": "^0.3.3",
     "clsx": "^1.1.1",
+    "holy-time": "^6.0.1",
     "next": "^14.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
