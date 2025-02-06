@@ -1,6 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --spacing: 1px;
+  --color-background: #1e1e1e;
+  --color-card: #262626;
+  --color-detail: #333333;
+  --color-link: #18a0fb;
+  --color-secondary: #8d8d8d;
+  --color-tertiary: #5d5d5d;
+}
 
 html {
   /* overflow: scroll; */

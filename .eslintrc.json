@@ -1,9 +1,0 @@
-{
-  "root": true,
-  "extends": ["next/core-web-vitals", "plugin:tailwindcss/recommended"],
-  "rules": {
-    "@next/next/no-img-element": "off",
-    "semi": ["error", "always"],
-    "react-hooks/exhaustive-deps": "off"
-  }
-}
