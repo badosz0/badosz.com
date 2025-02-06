@@ -51,6 +51,7 @@ export default function Page(): JSX.Element {
       ["SecondPractice", "Second Practice"],
       ["ThirdPractice", "Third Practice"],
       ["Qualifying", "Qualifying"],
+      ["SprintQualifying", "Sprint Qualifying"],
       ["Sprint", "Sprint"],
     ]) {
       if (!race[id]) {
