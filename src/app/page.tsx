@@ -18,7 +18,7 @@ export default function Page(): JSX.Element {
         <WorkExperience
           name="Dank Memer"
           image="/images/logos/memer.webp"
-          title="Chief Technology Officer"
+          title="Lead Software Engineer"
           time="2021 - Present"
         />
       </Section>
