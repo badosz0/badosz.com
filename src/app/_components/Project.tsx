@@ -11,7 +11,7 @@ type Props = {
 export function Project({ name, description, href, image, role }: Props) {
   return (
     <a
-      className="bg-card rounded-[4px] p-8 flex gap-16 sm:items-center "
+      className="bg-card rounded-[4px] p-8 flex gap-16 sm:items-center"
       href={href}
       target="_blank"
       rel="noopener noreferrer"
