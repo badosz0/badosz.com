@@ -10,17 +10,12 @@ export default function Page(): JSX.Element {
       </div>
       <Section title="Work Experience" className="flex flex-col gap-8">
         <WorkExperience
-          name="Slice"
-          image="/images/logos/slice.svg"
-          title="Full Stack Engineer"
-          time="2023 - Present"
-        />
-        <WorkExperience
           name="Dank Memer"
           image="/images/logos/memer.webp"
           title="Lead Software Engineer"
           time="2021 - Present"
         />
+        <WorkExperience name="Slice" image="/images/logos/slice.svg" title="Full Stack Engineer" time="2023 - 2025" />
       </Section>
 
       <Section title="Projects" className="flex flex-col gap-8">
