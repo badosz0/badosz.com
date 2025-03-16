@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 type Props = {
   name: string;
@@ -16,11 +16,7 @@ export function Project({ name, description, href, image, role }: Props) {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img
-        src={image}
-        className="h-80 aspect-video object-cover rounded-[2px]"
-        alt={name}
-      />
+      <img src={image} className="h-80 aspect-video object-cover rounded-[2px]" alt={name} />
       <div className="flex flex-col gap-4">
         <div className="flex gap-4 sm:flex-row flex-col">
           <p className="text-sm font-bold text-white">{name}</p>

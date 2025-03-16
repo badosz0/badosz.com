@@ -1,6 +1,6 @@
-import { Project } from "./_components/Project";
-import { Section } from "./_components/Section";
-import { WorkExperience } from "./_components/WorkExperience";
+import { Project } from './_components/Project';
+import { Section } from './_components/Section';
+import { WorkExperience } from './_components/WorkExperience';
 
 export default function Page(): JSX.Element {
   return (
