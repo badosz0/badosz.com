@@ -97,7 +97,7 @@ export default function Page(): JSX.Element {
               </div>
               <div className="flex flex-col items-end">
                 <p className="text-sm font-bold text-white">{c.time.format('MMMM DD')}</p>
-                <p className="text-sm text-secondary">{c.time.format('h:mm A')}</p>
+                <p className="text-sm text-secondary">{c.time.format('DDDD, h:mm A')}</p>
               </div>
             </div>
           ))}
