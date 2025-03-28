@@ -65,7 +65,7 @@ export default function Page(): JSX.Element {
   return (
     <div className="mx-auto max-w-3xl p-32 sm:p-64 flex flex-col gap-64">
       <div className="flex justify-between items-center w-full">
-        <p className="text-white font-bold text-2xl">F1</p>
+        <p className="text-text-primary-white font-medium text-2xl">F1</p>
       </div>
       <div className="flex flex-col gap-8">
         <div className="flex gap-8">
@@ -73,8 +73,8 @@ export default function Page(): JSX.Element {
             <p
               key={i}
               className={clsx(
-                'text-sm cursor-pointer font-bold select-none',
-                view === v ? 'text-secondary' : 'text-tertiary',
+                'text-sm cursor-pointer font-medium select-none',
+                view === v ? 'text-text-primary' : 'text-text-secondary',
               )}
               onClick={() => setView(v)}
             >
@@ -91,13 +91,13 @@ export default function Page(): JSX.Element {
               <div className="flex gap-8">
                 <img src={c.flag} className="h-40" alt={c.title} />
                 <div className="flex flex-col">
-                  <p className="text-sm font-bold text-white">{c.subtitle}</p>
-                  <p className="text-sm text-secondary">{c.title}</p>
+                  <p className="text-sm font-medium text-text-primary">{c.subtitle}</p>
+                  <p className="text-sm text-text-secondary">{c.title}</p>
                 </div>
               </div>
               <div className="flex flex-col items-end">
-                <p className="text-sm font-bold text-white">{c.time.format('MMMM DD')}</p>
-                <p className="text-sm text-secondary">{c.time.format('DDDD, h:mm A')}</p>
+                <p className="text-sm font-medium text-text-secondary">{c.time.format('MMMM DD')}</p>
+                <p className="text-sm text-text-secondary">{c.time.format('DDDD, h:mm A')}</p>
               </div>
             </div>
           ))}

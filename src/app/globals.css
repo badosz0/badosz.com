@@ -2,12 +2,13 @@
 
 @theme {
   --spacing: 1px;
-  --color-background: #1e1e1e;
-  --color-card: #262626;
+  --color-background: #FFF;
+  --color-card: #F6F6F7;
   --color-detail: #333333;
   --color-link: #18a0fb;
-  --color-secondary: #8d8d8d;
-  --color-tertiary: #5d5d5d;
+  --color-text-primary: #3C3C43;
+  --color-text-secondary: #3C3C43C7;
+  --color-text-tertiary: red;
 }
 
 html {
