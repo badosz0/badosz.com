@@ -15,11 +15,13 @@ const COUNTRY_MAP: Record<string, string> = {
 const time = (p: any) => new HolyTime(p ? `${p.date}T${p.time}` : Number.POSITIVE_INFINITY);
 
 export default function Page(): JSX.Element {
-  const { data } = useSWR<any>('https://api.jolpi.ca/ergast/f1/current.json');
+  const { data: races } = useSWR<any>('https://api.jolpi.ca/ergast/f1/current.json');
+  const { data: drivers } = useSWR<any>('https://api.jolpi.ca/ergast/f1/current/driverstandings.json');
   const now = new HolyTime();
-  const [view, setView] = useState<string>('All');
+  const [racesView, setRacesView] = useState<string>('All');
+  const [driversView, setDriversView] = useState<string>('Top 5');
 
-  if (!data) {
+  if (!races || !drivers) {
     return <></>;
   }
 
@@ -30,7 +32,7 @@ export default function Page(): JSX.Element {
     flag: string;
   }[] = [];
 
-  for (const race of data.MRData.RaceTable.Races) {
+  for (const race of races.MRData.RaceTable.Races) {
     const country = COUNTRY_MAP[race.Circuit.Location.country] ?? race.Circuit.Location.country;
     const flag = Constants.countries.find((c) => c.name === country)!.twemojiImageURL;
 
@@ -67,6 +69,51 @@ export default function Page(): JSX.Element {
       <div className="flex justify-between items-center w-full">
         <p className="text-text-primary-white font-medium text-2xl">F1</p>
       </div>
+
+      <div className="flex flex-col gap-8">
+        <div className="flex gap-8">
+          {['Top 5', 'All'].map((v, i) => (
+            <p
+              key={i}
+              className={clsx(
+                'text-sm cursor-pointer font-medium select-none',
+                driversView === v ? 'text-text-primary' : 'text-text-secondary',
+              )}
+              onClick={() => setDriversView(v)}
+            >
+              {v}
+            </p>
+          ))}
+        </div>
+        {drivers.MRData.StandingsTable.StandingsLists[0].DriverStandings.slice(
+          0,
+          driversView === 'Top 5' ? 5 : undefined,
+        ).map((d: any, i: number, a: any[]) => (
+          <div className="bg-card rounded-[4px] p-8 flex justify-between" key={d.Driver.driverId}>
+            <div className="flex gap-8">
+              <img
+                src={`/images/f1/drivers/${d.Driver.permanentNumber}.avif`}
+                className="h-40"
+                alt={d.Driver.givenName}
+              />
+              <div className="flex flex-col">
+                <p className="text-sm font-medium text-text-primary">
+                  {d.Driver.givenName} {d.Driver.familyName}
+                </p>
+                <p className="text-sm text-text-secondary">{d.Constructors[0].name}</p>
+              </div>
+            </div>
+            <div className="flex flex-col items-end">
+              <p className="text-sm font-medium text-text-secondary">
+                {d.points} Point{d.points === 1 ? '' : 's'}
+              </p>
+              <p className="text-sm text-text-secondary">
+                {d.wins} Win{d.wins === 1 ? '' : 's'}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
       <div className="flex flex-col gap-8">
         <div className="flex gap-8">
           {['All', 'Races'].map((v, i) => (
@@ -74,9 +121,9 @@ export default function Page(): JSX.Element {
               key={i}
               className={clsx(
                 'text-sm cursor-pointer font-medium select-none',
-                view === v ? 'text-text-primary' : 'text-text-secondary',
+                racesView === v ? 'text-text-primary' : 'text-text-secondary',
               )}
-              onClick={() => setView(v)}
+              onClick={() => setRacesView(v)}
             >
               {v}
             </p>
@@ -85,7 +132,7 @@ export default function Page(): JSX.Element {
         {calendar
           .sort((a, b) => a.time.getTime() - b.time.getTime())
           .filter((c) => c.time.isAfter(now))
-          .filter((c) => view === 'All' || c.subtitle === 'Race')
+          .filter((c) => racesView === 'All' || c.subtitle === 'Race')
           .map((c, i) => (
             <div className="bg-card rounded-[4px] p-8 flex justify-between" key={i}>
               <div className="flex gap-8">
