@@ -20,7 +20,7 @@ export default function Page(): JSX.Element {
           name="Top.gg"
           image="/images/logos/top.png"
           title="Frontend Engineer"
-          time="Mar 2025 - Jul 2025"
+          time="Mar 2025 - Present"
         />
         <WorkExperience
           name="Slice"
