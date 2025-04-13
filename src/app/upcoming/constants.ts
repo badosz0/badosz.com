@@ -75,6 +75,6 @@ export const EVENTS: Event[] = [
     title: 'The Fantastic Four: First Steps',
     subtitle: '',
     imageURL: 'https://media.themoviedb.org/t/p/w94_and_h141_bestv2/f0GOTglN9lVP7gUXP1tXBboonHN.jpg',
-    date: '2025-06-25',
+    date: '2025-07-25',
   },
 ];
