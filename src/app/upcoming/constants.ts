@@ -27,7 +27,6 @@ export const EVENTS: Event[] = [
       date: '2025-04-13',
     },
     7,
-
     (i) => `Episode ${i + 1}`,
   ),
   {
@@ -50,7 +49,6 @@ export const EVENTS: Event[] = [
       date: '2025-04-22',
     },
     4,
-
     (i) => `Episode ${i * 3 + 1}-${(i + 1) * 3}`,
   ),
   {
@@ -77,4 +75,39 @@ export const EVENTS: Event[] = [
     imageURL: 'https://media.themoviedb.org/t/p/w94_and_h141_bestv2/f0GOTglN9lVP7gUXP1tXBboonHN.jpg',
     date: '2025-07-25',
   },
+  {
+    title: 'Superman',
+    subtitle: '',
+    imageURL: 'https://media.themoviedb.org/t/p/w94_and_h141_bestv2/wPLysNDLffQLOVebZQCbXJEv6E6.jpg',
+    date: '2025-07-09',
+  },
+  {
+    title: 'Nobody 2',
+    subtitle: '',
+    imageURL: 'https://media.themoviedb.org/t/p/w94_and_h141_bestv2/16DE4ZwAx9fqocqJGP3ITl1UjN3.jpg',
+    date: '2025-08-13',
+  },
+  {
+    title: 'The Conjuring: Last Rites',
+    subtitle: '',
+    imageURL: 'https://media.themoviedb.org/t/p/w94_and_h141_bestv2/ho9UW4eV2iNGgNmkkiClPp9VNhy.jpg',
+    date: '2025-09-04',
+  },
+  {
+    title: 'Wicked: For Good',
+    subtitle: '',
+    imageURL: 'https://media.themoviedb.org/t/p/w94_and_h141_bestv2/cdlwS7DF4gw9F0jadfPHptuGuCt.jpg',
+    date: '2025-11-28',
+  },
+  ...weekly(
+    {
+      title: 'Ironheart',
+      subtitle: '',
+      imageURL: 'https://media.themoviedb.org/t/p/w94_and_h141_bestv2/ha1kackPwP1BLtyibzuv5hABiDk.jpg',
+      date: '2025-06-24',
+    },
+    6,
+    (i) => `Episode ${i + 1}`,
+  ),
+  
 ];
