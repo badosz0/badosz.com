@@ -109,5 +109,4 @@ export const EVENTS: Event[] = [
     6,
     (i) => `Episode ${i + 1}`,
   ),
-  
 ];
