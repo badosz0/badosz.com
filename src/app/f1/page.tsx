@@ -105,10 +105,10 @@ export default function Page(): JSX.Element {
             </div>
             <div className="flex flex-col items-end">
               <p className="text-sm font-medium text-text-secondary">
-                {d.points} Point{d.points === 1 ? '' : 's'}
+                {d.points} Point{d.points === '1' ? '' : 's'}
               </p>
               <p className="text-sm text-text-secondary">
-                {d.wins} Win{d.wins === 1 ? '' : 's'}
+                {d.wins} Win{d.wins === '1' ? '' : 's'}
               </p>
             </div>
           </div>
