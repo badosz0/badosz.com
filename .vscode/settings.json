@@ -1,17 +1,14 @@
 {
-  "editor.detectIndentation": false,
-  "editor.tabSize": 2,
-  "typescript.implementationsCodeLens.enabled": true,
-  "search.exclude": {
-    "**/node_modules": true,
-    "**/.next": true
-  },
+  "editor.defaultFormatter": "biomejs.biome",
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "editor.codeActionsOnSave": {
+    "quickfix.biome": "always",
+    "source.organizeImports.biome": "always",
   }
 }
