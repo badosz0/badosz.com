@@ -1,8 +1,7 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "files": {
-    "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
-    "ignore": [".next", "dist"]
+    "includes": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"]
   },
   "formatter": {
     "enabled": true,
@@ -13,7 +12,6 @@
     "lineWidth": 120,
     "attributePosition": "auto"
   },
-  "organizeImports": { "enabled": false },
   "linter": {
     "enabled": true,
     "rules": {
@@ -30,7 +28,8 @@
         "noUnusedImports": "error"
       },
       "performance": {
-        "noDelete": "off"
+        "noDelete": "off",
+        "noImgElement": "off"
       },
       "style": {
         "noNonNullAssertion": "off",

@@ -14,7 +14,7 @@ const COUNTRY_MAP: Record<string, string> = {
 
 const time = (p: any) => new HolyTime(p ? `${p.date}T${p.time}` : Number.POSITIVE_INFINITY);
 
-export default function Page(): JSX.Element {
+export default function Page() {
   const { data: races } = useSWR<any>('https://api.jolpi.ca/ergast/f1/current.json');
   const { data: drivers } = useSWR<any>('https://api.jolpi.ca/ergast/f1/current/driverstandings.json');
   const now = new HolyTime();
@@ -22,7 +22,7 @@ export default function Page(): JSX.Element {
   const [driversView, setDriversView] = useState<string>('Top 5');
 
   if (!races || !drivers) {
-    return <></>;
+    return null;
   }
 
   const calendar: {
@@ -88,7 +88,7 @@ export default function Page(): JSX.Element {
         {drivers.MRData.StandingsTable.StandingsLists[0].DriverStandings.slice(
           0,
           driversView === 'Top 5' ? 5 : undefined,
-        ).map((d: any, i: number, a: any[]) => (
+        ).map((d: any, _i: number, _a: any[]) => (
           <div className="bg-card rounded-[4px] p-8 flex justify-between" key={d.Driver.driverId}>
             <div className="flex gap-8">
               <img
