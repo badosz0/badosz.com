@@ -1,6 +1,5 @@
 import { Project } from './_components/Project';
 import { Section } from './_components/Section';
-import { WorkExperience } from './_components/WorkExperience';
 
 export default function Page(): JSX.Element {
   return (
@@ -9,26 +8,7 @@ export default function Page(): JSX.Element {
         <p className="text-text-primary font-medium text-md">Bartosz Król</p>
         <p className="text-text-secondary font-medium text-md">Software Engineer</p>
       </div>
-      <Section title="Work Experience" className="flex flex-col gap-8">
-        <WorkExperience
-          name="Dank Memer"
-          image="/images/logos/memer.webp"
-          title="Lead Software Engineer"
-          time="Jul 2021 - Present"
-        />
-        <WorkExperience
-          name="Top.gg"
-          image="/images/logos/top.png"
-          title="Frontend Engineer"
-          time="Mar 2025 - Present"
-        />
-        <WorkExperience
-          name="Slice"
-          image="/images/logos/slice.svg"
-          title="Full Stack Engineer"
-          time="Nov 2023 - Mar 2025"
-        />
-      </Section>
+
 
       <Section title="Projects" className="flex flex-col gap-8">
         <Project
