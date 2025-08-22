@@ -18,14 +18,16 @@
       "recommended": true,
       "a11y": {
         "useKeyWithClickEvents": "off",
-        "useValidAriaRole": "off"
+        "useValidAriaRole": "off",
+        "noStaticElementInteractions": "off"
       },
       "complexity": {
         "noStaticOnlyClass": "off"
       },
       "correctness": {
         "useExhaustiveDependencies": "off",
-        "noUnusedImports": "error"
+        "noUnusedImports": "error",
+        "useUniqueElementIds": "off"
       },
       "performance": {
         "noDelete": "off",
@@ -33,7 +35,8 @@
       },
       "style": {
         "noNonNullAssertion": "off",
-        "useBlockStatements": "error"
+        "useBlockStatements": "error",
+        "useTemplate": "off"
       },
       "suspicious": {
         "noExplicitAny": "off",

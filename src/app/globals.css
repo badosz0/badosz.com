@@ -4,7 +4,7 @@
   --spacing: 1px;
   --color-background: #FFF;
   --color-card: #F6F6F7;
-  --color-detail: #333333;
+  --color-card-secondary: #E7E9ED;
   --color-link: #18a0fb;
   --color-text-primary: #3C3C43;
   --color-text-secondary: #3C3C43C7;
@@ -25,4 +25,5 @@ body {
   margin: 0;
   padding: 0;
   @apply bg-background;
+  @apply text-text-primary;
 }
