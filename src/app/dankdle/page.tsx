@@ -188,7 +188,7 @@ export default function Page() {
                   `**Dankdle #${dankdleIndex}**\n` +
                     `My guesses: ${guesses.length}\n\n` +
                     `${emojis}\n` +
-                    'https://badosz.com/dankdle',
+                    '<https://badosz.com/dankdle>',
                 );
               }}
             >
