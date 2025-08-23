@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
-import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://badosz.com/'),
+  metadataBase: new URL('https://badosz.com/dankdle'),
   title: {
     template: 'Dankdle',
     default: 'Guess the item!',
