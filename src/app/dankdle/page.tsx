@@ -317,7 +317,7 @@ function Box({ target, value }: BoxProps) {
   );
 }
 
-export function xmur3(base: string): () => number {
+function xmur3(base: string): () => number {
   let h = 1_779_033_703 ^ base.length;
 
   for (let i = 0; i < base.length; i++) {
