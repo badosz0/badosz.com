@@ -2,19 +2,13 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://badosz.com/dankdle'),
-  title: {
-    template: 'Dankdle',
-    default: 'Guess the item!',
-  },
+  title: 'Dankdle',
   description: 'Guess the item!',
-
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    title: {
-      template: 'Dankdle',
-      default: 'Guess the item!',
-    },
+    title: 'Dankdle',
+    description: 'Guess the item!',
     url: 'https://badosz.com/dankdle',
   },
   icons: [

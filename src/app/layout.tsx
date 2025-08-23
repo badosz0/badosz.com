@@ -7,10 +7,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://badosz.com/'),
-  title: {
-    template: 'Bartosz Król',
-    default: 'Bartosz Król',
-  },
+  title: 'Bartosz Król',
   description: 'Software Engineer',
   twitter: {
     card: 'summary_large_image',
@@ -20,10 +17,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    title: {
-      template: 'Bartosz Król',
-      default: 'Bartosz Król',
-    },
+    title: 'Bartosz Król',
+    description: 'Software Engineer',
     url: 'https://badosz.com/',
   },
   icons: [
