@@ -9,7 +9,7 @@ export default function Page(): JSX.Element {
         <p className="text-text-secondary font-medium text-md">Software Engineer</p>
       </div>
 
-      <Section title="Projects" className="flex flex-col gap-8">
+      <Section title="Work" className="flex flex-col gap-8">
         <Project
           name="Brickver"
           description="A platform where you can showcase your LEGO collection, discover new sets, and connect with other LEGO fans!"
