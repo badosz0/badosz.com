@@ -1,9 +1,12 @@
 import type { Metadata, Viewport } from 'next';
-import './globals.css';
 import { Inter } from 'next/font/google';
-import { SWRProvider } from '../providers/swr';
+import './globals.css';
+import SWRProvider from './providers/swr';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  variable: '--font-inter',
+  subsets: ['latin'],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://badosz.com/'),
@@ -23,7 +26,7 @@ export const metadata: Metadata = {
   },
   icons: [
     {
-      url: '/images/avatar/badosz.png',
+      url: '/avatars/badosz.png',
       type: 'image/png',
     },
   ],
@@ -33,10 +36,14 @@ export const viewport: Viewport = {
   themeColor: '#FFFFFF',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en" className={inter.className}>
-      <body>
+    <html lang="en">
+      <body className={`${inter.variable} antialiased`}>
         <SWRProvider>{children}</SWRProvider>
       </body>
     </html>
