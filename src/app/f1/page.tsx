@@ -54,7 +54,7 @@ export default function Page() {
             <p className="font-medium text-sm">{nextRace.race[0].circuit.circuitName}</p>
             <div className="text-text-secondary text-xs">
               {Object.entries(nextRace.race[0].schedule)
-                .filter(([id, { date }]: any) => date && SESSIONS[id])
+                .filter(([id, { date }]: any) => date && SESSIONS[id] && time(date).add(1, 'hours').isAfter(now))
                 .sort((a: any, b: any) => time(a[1]).getTime() - time(b[1]).getTime())
                 .map(([id, d]: any) => (
                   <div key={id} className="flex items-center gap-2">
