@@ -5,6 +5,7 @@ import HolyTime from 'holy-time';
 import Image from 'next/image';
 import useSWR from 'swr';
 import Card from '../../components/card';
+import { useState } from 'react';
 
 const SESSIONS: Record<string, string> = {
   race: 'Race',
@@ -25,9 +26,11 @@ const time = (p: any) => new HolyTime(p ? `${p.date}T${p.time}` : Number.POSITIV
 export default function Page() {
   const { data: nextRace } = useSWR('https://f1api.dev/api/current/next');
   const { data: futureRaces } = useSWR('https://f1api.dev/api/2025');
+  const { data: drivers } = useSWR('https://f1api.dev/api/current/drivers-championship');
+  const [moreDrivers, setMoreDrivers] = useState(false);
   const now = HolyTime.now();
 
-  if (!nextRace || !futureRaces) {
+  if (!nextRace || !futureRaces || !drivers) {
     return null;
   }
 
@@ -99,6 +102,35 @@ export default function Page() {
               </div>
             </Card>
           ))}
+      </div>
+      <div className="flex flex-col gap-2">
+        <p className="text-text-secondary text-sm font-medium">Drivers Championship</p>
+        {drivers.drivers_championship
+
+          .sort((a: any, b: any) => b.points - a.points)
+          .slice(0, moreDrivers ? drivers.drivers_championship.length : 3)
+          .map((driver: any, i: number, drivers: any[]) => (
+            <Card className="flex items-center gap-4" key={i}>
+              <img
+                src={`https://df0603krefnld.cloudfront.net/drivers/headshots/${driver.driver.surname.split(' ').at(-1)}.png`}
+                alt={driver.driver.surname}
+                width={32}
+                height={32}
+              />
+              <div>
+                <p className="font-medium text-sm">
+                  {driver.driver.name} {driver.driver.surname}
+                </p>
+                <div className="text-text-secondary text-xs">
+                  {driver.points} Point{driver.points === 1 ? '' : 's'}{' '}
+                  {i === 0 ? '' : `(-${drivers[0].points - driver.points})`}
+                </div>
+              </div>
+            </Card>
+          ))}
+        <Card className="flex items-center justify-center" onClick={() => setMoreDrivers(!moreDrivers)}>
+          <p className="text-text-secondary text-xs">{moreDrivers ? 'Show Less' : 'Show More'}</p>
+        </Card>
       </div>
     </div>
   );
