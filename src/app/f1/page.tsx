@@ -21,7 +21,11 @@ const COUNTRY_MAP: Record<string, string> = {
   'Great Britain': 'United Kingdom',
 };
 
-const time = (p: any) => new HolyTime(p ? `${p.date}T${p.time}` : Number.POSITIVE_INFINITY);
+const time = (p: any, race: any) =>
+  new HolyTime(p ? `${p.date}T${p.time}` : Number.POSITIVE_INFINITY).add(
+    race.circuit.circuitName.toLowerCase().includes('vegas') ? 1 : 0,
+    'days',
+  );
 
 export default function Page() {
   const { data: nextRace } = useSWR('https://f1api.dev/api/current/next');
@@ -57,11 +61,17 @@ export default function Page() {
             <p className="font-medium text-sm">{nextRace.race[0].circuit.circuitName}</p>
             <div className="text-text-secondary text-xs">
               {Object.entries(nextRace.race[0].schedule)
-                .filter(([id, d]: any) => d.date && SESSIONS[id] && time(d).add(1, 'hours').isAfter(now))
-                .sort((a: any, b: any) => time(a[1]).getTime() - time(b[1]).getTime())
+                .filter(
+                  ([id, d]: any) => d.date && SESSIONS[id] && time(d, nextRace.race[0]).add(1, 'hours').isAfter(now),
+                )
+                .sort(
+                  (a: any, b: any) => time(a[1], nextRace.race[0]).getTime() - time(b[1], nextRace.race[0]).getTime(),
+                )
                 .map(([id, d]: any) => (
                   <div key={id} className="flex items-center gap-2">
-                    <p className="text-text-secondary text-xs tabular-nums">{time(d).format('MMMM DD, HH:mm')}</p>
+                    <p className="text-text-secondary text-xs tabular-nums">
+                      {time(d, nextRace.race[0]).format('MMMM DD, HH:mm')}
+                    </p>
                     <p className="text-text-secondary text-xs">{SESSIONS[id] ?? id}</p>
                   </div>
                 ))}
@@ -72,8 +82,8 @@ export default function Page() {
       <div className="flex flex-col gap-2">
         <p className="text-text-secondary text-sm font-medium">Future Races</p>
         {futureRaces.races
-          .filter((race: any) => time(race.schedule.race).isAfter(now) && race.raceId !== nextRace.race[0].raceId)
-          .sort((a: any, b: any) => time(a.schedule.race).getTime() - time(b.schedule.race).getTime())
+          .filter((race: any) => time(race.schedule.race, race).isAfter(now) && race.raceId !== nextRace.race[0].raceId)
+          .sort((a: any, b: any) => time(a.schedule.race, a).getTime() - time(b.schedule.race, b).getTime())
           .map((race: any, i: number) => (
             <Card className="flex items-center gap-4" key={i}>
               <Image
@@ -91,10 +101,12 @@ export default function Page() {
                 <div className="text-text-secondary text-xs">
                   {Object.entries(race.schedule)
                     .filter(([id, { date }]: any) => date && SESSIONS[id])
-                    .sort((a: any, b: any) => time(a[1]).getTime() - time(b[1]).getTime())
+                    .sort((a: any, b: any) => time(a[1], race).getTime() - time(b[1], race).getTime())
                     .map(([id, d]: any) => (
                       <div key={id} className="flex items-center gap-2">
-                        <p className="text-text-secondary text-xs tabular-nums">{time(d).format('MMMM DD, HH:mm')}</p>
+                        <p className="text-text-secondary text-xs tabular-nums">
+                          {time(d, race).format('MMMM DD, HH:mm')}
+                        </p>
                         <p className="text-text-secondary text-xs">{SESSIONS[id] ?? id}</p>
                       </div>
                     ))}
