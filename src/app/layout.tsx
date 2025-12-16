@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import SWRProvider from './providers/swr';
 
 const inter = Inter({
@@ -44,7 +45,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
-        <SWRProvider>{children}</SWRProvider>
+        <SWRProvider>
+          <NuqsAdapter>{children}</NuqsAdapter>
+        </SWRProvider>
       </body>
     </html>
   );

@@ -27,7 +27,8 @@
       "correctness": {
         "useExhaustiveDependencies": "off",
         "noUnusedImports": "error",
-        "useUniqueElementIds": "off"
+        "useUniqueElementIds": "off",
+        "noUnusedVariables": "off"
       },
       "performance": {
         "noDelete": "off",
