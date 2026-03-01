@@ -32,6 +32,7 @@ export default function Page() {
   const { data: futureRaces } = useSWR(`https://f1api.dev/api/${new Date().getFullYear()}`);
   const { data: drivers } = useSWR('https://f1api.dev/api/current/drivers-championship');
   const [moreDrivers, setMoreDrivers] = useState(false);
+  const [moreRaces, setMoreRaces] = useState(false);
   const now = HolyTime.now();
 
   if (!nextRace || !futureRaces || !drivers) {
@@ -83,6 +84,7 @@ export default function Page() {
         <p className="text-text-secondary text-sm font-medium">Future Races</p>
         {futureRaces.races
           .filter((race: any) => time(race.schedule.race, race).isAfter(now) && race.raceId !== nextRace.race[0].raceId)
+          .slice(0, moreRaces ? futureRaces.races.length : 3)
           .sort((a: any, b: any) => time(a.schedule.race, a).getTime() - time(b.schedule.race, b).getTime())
           .map((race: any, i: number) => (
             <Card className="flex items-center gap-4" key={i}>
@@ -102,18 +104,26 @@ export default function Page() {
                   {Object.entries(race.schedule)
                     .filter(([id, { date }]: any) => date && SESSIONS[id])
                     .sort((a: any, b: any) => time(a[1], race).getTime() - time(b[1], race).getTime())
-                    .map(([id, d]: any) => (
-                      <div key={id} className="flex items-center gap-2">
-                        <p className="text-text-secondary text-xs tabular-nums">
-                          {time(d, race).format('MMMM DD, HH:mm')}
-                        </p>
-                        <p className="text-text-secondary text-xs">{SESSIONS[id] ?? id}</p>
-                      </div>
-                    ))}
+                    .map(([id, d]: any) => {
+                      if (!d.time) {
+                        return null;
+                      }
+                      return (
+                        <div key={id} className="flex items-center gap-2">
+                          <p className="text-text-secondary text-xs tabular-nums">
+                            {time(d, race).format('MMMM DD, HH:mm')}
+                          </p>
+                          <p className="text-text-secondary text-xs">{SESSIONS[id] ?? id}</p>
+                        </div>
+                      );
+                    })}
                 </div>
               </div>
             </Card>
           ))}
+        <Card className="flex items-center justify-center" onClick={() => setMoreRaces(!moreRaces)}>
+          <p className="text-text-secondary text-xs">{moreRaces ? 'Show Less' : 'Show More'}</p>
+        </Card>
       </div>
       <div className="flex flex-col gap-2">
         <p className="text-text-secondary text-sm font-medium">Drivers Championship</p>
