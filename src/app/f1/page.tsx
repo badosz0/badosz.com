@@ -29,7 +29,7 @@ const time = (p: any, race: any) =>
 
 export default function Page() {
   const { data: nextRace } = useSWR('https://f1api.dev/api/current/next');
-  const { data: futureRaces } = useSWR('https://f1api.dev/api/2025');
+  const { data: futureRaces } = useSWR(`https://f1api.dev/api/${new Date().getFullYear()}`);
   const { data: drivers } = useSWR('https://f1api.dev/api/current/drivers-championship');
   const [moreDrivers, setMoreDrivers] = useState(false);
   const now = HolyTime.now();
@@ -118,7 +118,6 @@ export default function Page() {
       <div className="flex flex-col gap-2">
         <p className="text-text-secondary text-sm font-medium">Drivers Championship</p>
         {drivers.drivers_championship
-
           .sort((a: any, b: any) => b.points - a.points)
           .slice(0, moreDrivers ? drivers.drivers_championship.length : 3)
           .map((driver: any, i: number, drivers: any[]) => (
