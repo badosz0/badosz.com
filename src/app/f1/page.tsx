@@ -3,9 +3,9 @@
 import { Constants } from 'amerkit';
 import HolyTime from 'holy-time';
 import Image from 'next/image';
+import { useState } from 'react';
 import useSWR from 'swr';
 import Card from '../../components/card';
-import { useState } from 'react';
 
 const SESSIONS: Record<string, string> = {
   race: 'Race',
@@ -133,7 +133,11 @@ export default function Page() {
           .map((driver: any, i: number, drivers: any[]) => (
             <Card className="flex items-center gap-4" key={i}>
               <img
-                src={`https://df0603krefnld.cloudfront.net/drivers/headshots/${driver.driver.surname.split(' ').at(-1)}.png`}
+                src={`https://df0603krefnld.cloudfront.net/drivers/headshots/${driver.driver.surname
+                  .split(' ')
+                  .at(-1)
+                  .normalize('NFD')
+                  .replace(/[\u0300-\u036f]/g, '')}.png`}
                 alt={driver.driver.surname}
                 width={32}
                 height={32}
