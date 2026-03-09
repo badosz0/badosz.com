@@ -1,41 +1,21 @@
 'use client';
 
-import { Constants } from 'amerkit';
 import HolyTime from 'holy-time';
-import Image from 'next/image';
 import { useState } from 'react';
 import useSWR from 'swr';
 import Card from '../../components/card';
-
-const SESSIONS: Record<string, string> = {
-  race: 'Race',
-  qualy: 'Qualifying',
-  sprintQualy: 'Sprint Qualifying',
-  sprintRace: 'Sprint',
-  fp1: 'Free Practice 1',
-  fp2: 'Free Practice 2',
-  fp3: 'Free Practice 3',
-};
-
-const COUNTRY_MAP: Record<string, string> = {
-  'Great Britain': 'United Kingdom',
-};
-
-const time = (p: any, race: any) =>
-  new HolyTime(p ? `${p.date}T${p.time}` : Number.POSITIVE_INFINITY).add(
-    race.circuit.circuitName.toLowerCase().includes('vegas') ? 1 : 0,
-    'days',
-  );
+import { Driver } from './components/driver';
+import { Race } from './components/race';
+import { time } from './utils';
 
 export default function Page() {
-  const { data: nextRace } = useSWR('https://f1api.dev/api/current/next');
   const { data: futureRaces } = useSWR(`https://f1api.dev/api/${new Date().getFullYear()}`);
   const { data: drivers } = useSWR('https://f1api.dev/api/current/drivers-championship');
   const [moreDrivers, setMoreDrivers] = useState(false);
   const [moreRaces, setMoreRaces] = useState(false);
   const now = HolyTime.now();
 
-  if (!nextRace || !futureRaces || !drivers) {
+  if (!futureRaces || !drivers) {
     return null;
   }
 
@@ -46,80 +26,17 @@ export default function Page() {
       </div>
       <div className="flex flex-col gap-2">
         <p className="text-text-secondary text-sm font-medium">Next Race</p>
-        <Card className="flex items-center gap-4">
-          <Image
-            src={
-              Constants.countries.find(
-                (country) =>
-                  country.name === (COUNTRY_MAP[nextRace.race[0].circuit.country] ?? nextRace.race[0].circuit.country),
-              )?.twemojiImageURL ?? ''
-            }
-            alt={nextRace.race[0].circuit.country}
-            width={32}
-            height={32}
-          />
-          <div>
-            <p className="font-medium text-sm">{nextRace.race[0].circuit.circuitName}</p>
-            <div className="text-text-secondary text-xs">
-              {Object.entries(nextRace.race[0].schedule)
-                .filter(
-                  ([id, d]: any) => d.date && SESSIONS[id] && time(d, nextRace.race[0]).add(1, 'hours').isAfter(now),
-                )
-                .sort(
-                  (a: any, b: any) => time(a[1], nextRace.race[0]).getTime() - time(b[1], nextRace.race[0]).getTime(),
-                )
-                .map(([id, d]: any) => (
-                  <div key={id} className="flex items-center gap-2">
-                    <p className="text-text-secondary text-xs tabular-nums">
-                      {time(d, nextRace.race[0]).format('MMMM DD, HH:mm')}
-                    </p>
-                    <p className="text-text-secondary text-xs">{SESSIONS[id] ?? id}</p>
-                  </div>
-                ))}
-            </div>
-          </div>
-        </Card>
+        <Race race={futureRaces.races.find((race: any) => time(race.schedule.race, race).isAfter(now))} />
       </div>
       <div className="flex flex-col gap-2">
         <p className="text-text-secondary text-sm font-medium">Future Races</p>
         {futureRaces.races
-          .filter((race: any) => time(race.schedule.race, race).isAfter(now) && race.raceId !== nextRace.race[0].raceId)
+          .filter((race: any) => time(race.schedule.race, race).isAfter(now))
+          .slice(1)
           .slice(0, moreRaces ? futureRaces.races.length : 3)
           .sort((a: any, b: any) => time(a.schedule.race, a).getTime() - time(b.schedule.race, b).getTime())
-          .map((race: any, i: number) => (
-            <Card className="flex items-center gap-4" key={i}>
-              <Image
-                src={
-                  Constants.countries.find(
-                    (country) => country.name === (COUNTRY_MAP[race.circuit.country] ?? race.circuit.country),
-                  )?.twemojiImageURL ?? ''
-                }
-                alt={race.circuit.country}
-                width={32}
-                height={32}
-              />
-              <div>
-                <p className="font-medium text-sm">{race.circuit.circuitName}</p>
-                <div className="text-text-secondary text-xs">
-                  {Object.entries(race.schedule)
-                    .filter(([id, { date }]: any) => date && SESSIONS[id])
-                    .sort((a: any, b: any) => time(a[1], race).getTime() - time(b[1], race).getTime())
-                    .map(([id, d]: any) => {
-                      if (!d.time) {
-                        return null;
-                      }
-                      return (
-                        <div key={id} className="flex items-center gap-2">
-                          <p className="text-text-secondary text-xs tabular-nums">
-                            {time(d, race).format('MMMM DD, HH:mm')}
-                          </p>
-                          <p className="text-text-secondary text-xs">{SESSIONS[id] ?? id}</p>
-                        </div>
-                      );
-                    })}
-                </div>
-              </div>
-            </Card>
+          .map((race: any) => (
+            <Race key={race.raceId} race={race} />
           ))}
         <Card className="flex items-center justify-center" onClick={() => setMoreRaces(!moreRaces)}>
           <p className="text-text-secondary text-xs">{moreRaces ? 'Show Less' : 'Show More'}</p>
@@ -131,27 +48,7 @@ export default function Page() {
           .sort((a: any, b: any) => b.points - a.points)
           .slice(0, moreDrivers ? drivers.drivers_championship.length : 3)
           .map((driver: any, i: number, drivers: any[]) => (
-            <Card className="flex items-center gap-4" key={i}>
-              <img
-                src={`https://df0603krefnld.cloudfront.net/drivers/headshots/${driver.driver.surname
-                  .split(' ')
-                  .at(-1)
-                  .normalize('NFD')
-                  .replace(/[\u0300-\u036f]/g, '')}.png`}
-                alt={driver.driver.surname}
-                width={32}
-                height={32}
-              />
-              <div>
-                <p className="font-medium text-sm">
-                  {driver.driver.name} {driver.driver.surname}
-                </p>
-                <div className="text-text-secondary text-xs">
-                  {driver.points} Point{driver.points === 1 ? '' : 's'}{' '}
-                  {i === 0 ? '' : `(-${drivers[0].points - driver.points})`}
-                </div>
-              </div>
-            </Card>
+            <Driver key={i} driver={driver} pointReference={drivers[0].points} i={i} />
           ))}
         <Card className="flex items-center justify-center" onClick={() => setMoreDrivers(!moreDrivers)}>
           <p className="text-text-secondary text-xs">{moreDrivers ? 'Show Less' : 'Show More'}</p>
