@@ -29,15 +29,21 @@ export const WORK: WorkEntry[] = [
     url: 'https://maki.gg',
     rounded: true,
   },
-];
-
-export const PAST_WORK: WorkEntry[] = [
+  {
+    title: 'DisUI',
+    description: 'A library for building UIs inside of Discord.',
+    icon: '/icons/github.svg',
+    url: 'https://github.com/badosz0/DisUI',
+  },
   {
     title: 'Top.gg',
     description: 'A platform to spice up your Discord experience with diverse range of Discord Bots and Apps.',
     icon: '/icons/topgg.webp',
     url: 'https://top.gg',
   },
+];
+
+export const PAST_WORK: WorkEntry[] = [
   {
     title: 'Slice',
     description:
